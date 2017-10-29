@@ -1,0 +1,37 @@
+//GRID SETTINGS
+$columns: 12;                  //number of columns
+$columnSize: 100%/$columns;    //size of single column
+
+
+//MEDIA QUERY SETTINGS RWD
+//$tablet-width: 800px;
+$RWDbreakpoints:(
+    MediumMobile: 600px,
+    Tablet: 800px,
+    Laptop: 966px
+);
+
+
+//FONTS - HEADER
+$navFontSize: 0.875rem;
+
+
+
+//FONTS - SECTION1 SLIDER BUTTONS
+$sliderButtonsFontSize: (
+    desktop: 5rem,
+    mobile: 2rem
+);
+
+//FONTS - SECTION1 SLIDER CONTENT
+$sliderContentFontSize: (
+    laptopHeader: 40px,
+    tabletHeader: 35px,
+    mobileHeader: 30px,
+    laptopParagraph: 16px,
+    tabletParagraph: 14px,
+    mobileParagraph: 12px,
+    laptopButton3: 24px,
+    tabletButton3: 21px,
+    mobileButton3: 18px
+);

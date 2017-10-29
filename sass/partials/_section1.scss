@@ -1,0 +1,153 @@
+
+/*SECTION 1 ELEMENTS SETTINGS----------
+-------------------------------------*/
+/*GLOBAL CLASSES*/
+.slide__hidden {
+    display: none;
+}
+.slide__visible {
+    display: flex;
+}
+
+
+/*SLIDER BUTTONS SETTINGS*/
+.sect1__btn {  //left,right button
+  display:inline-block;
+  width:100%;
+  min-height: 31.25rem;
+  background: transparent;
+  text-align: left;
+  font-size: map-get($sliderButtonsFontSize, mobile);
+  @include mobileMedium{
+    font-size: map-get($sliderButtonsFontSize, desktop);
+  }
+  color:$secondColor;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.sect1__btn2 {  //right button
+  text-align: right;
+}
+
+
+/*SLIDER LIST SETTINGS*/
+.sect1__list{
+    list-style: none;
+    .sect1__list__item{
+        &.slide__hidden{                    //List items hidden default
+            display: none;
+        }
+        .sect1__slide{
+            @extend %flexColCenter;
+            .sect1__slide__col-1{           //Image container
+                @extend %flexColCenter;
+                @extend %sliderContainerSize;
+            }
+            .sect1__slide__col-2{           //Text container
+                @extend %flexColCenter;
+                @extend %sliderContainerSize;
+            }
+            @include tablet{                //Mixin media query
+                flex-direction: row;
+                .sect1__slide__col-1{       //Image container
+                    width:40%;
+                    height: 30.875rem;
+                }
+                .sect1__slide__col-2{       //Text container
+                    width: 60%;
+                    height: 30.875rem;
+                }
+            }
+        }
+    }
+}
+
+
+/*IMAGE IN SLIDER*/
+.sect1__img {
+    display: inline-block;
+    object-fit: none;
+    height: 84%;
+    @include mobileMedium{
+        margin-top: 3.125rem;
+    }
+    @include laptop{
+        object-fit: cover;
+    }
+}
+
+.red__chair {
+    object-fit: contain;
+}
+
+
+/*TEXT AREA IN SLIDER*/
+/*HEADER*/
+.sect1__h1{
+    font-size: map-get($sliderContentFontSize,mobileHeader);
+    @media (min-width:801px)and(max-width: 900px) {
+        font-size: map-get($sliderContentFontSize,tabletHeader);
+    }
+    @media (min-width:901px) {
+        font-size: map-get($sliderContentFontSize,laptopHeader);
+        margin-top:0.625rem;
+    }
+    display: inline-block;    //tu skonczylem stylowanie
+    text-align: center;
+    .sect1__strong{
+        color:$secondColor;
+    }
+}
+/*PARAGRAPH*/
+.sect1__p1 {
+    font-size: 14px;
+    line-height: 21px;
+    @media (min-width:801px) and (max-width: 900px) {
+        font-size: map-get($sliderContentFontSize,tabletParagraph);
+        line-height: 21px;
+    }
+    @media (min-width:901px) {
+        font-size: map-get($sliderContentFontSize,laptopParagraph);
+        line-height: 23px;
+    }
+    text-align: center;
+    margin-top: 18px;
+    //line-height: 23px;
+    padding:0 40px 0 40px;
+    display: inline-block;
+    color: grey;
+}
+
+//Button in slide
+.sect1__btn3 {
+    display:inline-block;
+    background-color: $secondColor;
+    color: $firstColor;
+    text-align: center;
+    text-decoration: none;
+    line-height: 21px;
+    font-size: map-get($sliderContentFontSize,mobileButton3);
+    @media (min-width:801px) and (max-width: 900px) {
+        font-size: map-get($sliderContentFontSize,tabletButton3);
+        line-height: 24px;
+        padding: 14px 30px 9px 48px;
+    }
+    @media (min-width:901px) {
+        font-size: map-get($sliderContentFontSize,laptopButton3);
+        line-height: 29px;
+        margin:35px 0 20px 0;
+        padding: 14px 30px 9px 48px;
+    }
+    border-radius: 9px;
+    margin:20px 0 20px 0;
+    padding: 14px 48px 9px 48px;
+    &:hover {
+        color: $secondColor;
+        background-color: $firstColor;
+        box-shadow: 2px 2px 1px #888888;
+    }
+    &:active {
+        box-shadow: 1px 1px 1px #888888;
+    }
+}

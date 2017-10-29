@@ -1,0 +1,69 @@
+/*Grid 12 columns*/
+.container{
+    width:100%;
+    max-width: 64rem; //1024px
+    margin: 0 auto;
+
+    .row:before, .row:after {
+        content: '';
+        clear:both;
+        display:block;
+    }
+
+    .row{
+        border:0.0625rem solid red;
+        //Mobile settings without gutters
+        @for $i from 1 through $columns {
+            .col-smx-#{$i} {
+                float:left;
+                min-height: 0.0625rem;
+                width: ($columnSize) *$i;
+            }
+        }
+
+        //Tablet settings without gutters
+        @media screen and (min-width: 704px){
+            @for $i from 1 through $columns {
+                .col-mdx-#{$i} {
+                    float:left;
+                    min-height: 0.0625rem;
+                    width: ($columnSize) *$i;
+                }
+            }
+        }
+
+        //Tablet settings with gutters on left-rigth
+        @media screen and (min-width: 704px){  
+            @for $i from 1 through $columns {
+                .col-md-#{$i} {
+                    float:left;
+                    min-height: 0.0625rem;
+                    width: ($columnSize) *$i;
+                    padding-right: 0.625rem;
+                    padding-left: 0.625rem;
+                }
+            }
+            //dodatek do wykreowania poprawnych gutterow - usuwa prawy
+            [class*='col-md-']:last-of-type {
+                  padding-right: 0;
+            }
+        }
+
+        //Desktop settings with gutters on right
+        @media screen and (min-width: 900px){
+            @for $i from 1 through $columns {
+                .col-lg-#{$i} {
+                    float:left;
+                    min-height: 0.0625rem;
+                    width: ($columnSize) *$i;
+                    padding-right: 1.25rem;
+                    padding-left:0;
+                }
+            }
+            //dodatek do wykreowania poprawnych gutterow
+            [class*='col-lg-']:last-of-type {
+                  padding-right: 0;
+            }
+        }
+    }
+}

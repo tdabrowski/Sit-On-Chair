@@ -1,0 +1,79 @@
+/*HEADER ELEMENTS SETTINGS--------------------
+--------------------------------------------*/
+
+/*LOGO*/
+.head__logo {
+    display: inline-block;
+    padding: 0.75rem 0;
+}
+.head__bold {
+    color:$secondColor;
+    font-weight: bold;
+}
+
+
+/*BURGER BUTTON*/
+.burger {
+    display:inline-block;
+    }
+.burgerContent{
+    width: 2.1875rem;
+    height: 0.3125rem;
+    background-color: white;
+    margin: 0.375rem 0;
+}
+
+
+/*MAIN NAVIGATION*/
+.head__nav {
+    font-size: 0;
+}
+.head__nav__ul {
+    list-style: none;
+    .head__nav__li {
+        display: inline-block;
+        padding: 0.75rem 0 0.75rem 3.125rem;
+        position: relative;
+        .head__nav__a {
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                @extend %linksDecoration;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+/*SUBNAVIGATION*/
+.head__subnav {
+    position: absolute;
+    background-color: black;
+    width: 7.5rem;
+    height: 6.25rem;
+    display: none; //none by default
+    top: 130%;
+    left: 30%;
+    &::after {
+        content: '';
+        position: absolute;
+        top: -24%;
+        left:33%;
+        border-top: 1rem solid rgba(255,255,255, 0);
+        border-left: 1rem solid rgba(255,255,255, 0);
+        border-bottom: 1rem solid black;
+        border-right: 1rem solid rgba(255,255,255, 0);
+    }
+    .head__subnav__li {
+        padding: 0.5rem 0 0.5rem 1rem;
+        .head__subnav__a:link,
+        .head__subnav__a:visited,
+        .head__subnav__a:hover,
+        .head__subnav__a:active {
+            @extend %linksDecoration;
+        }
+    }
+}
+/*End Header settings*/

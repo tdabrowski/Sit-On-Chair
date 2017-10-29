@@ -1,0 +1,45 @@
+//GLOBAL SETTINGS
+//Flex container
+%flexRowStart {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+%flexRowEnd {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+%flexColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+%flexRowSpace {  //burger
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+//HEADER SECTION
+//Navigation
+%linksDecoration{
+    color: $firstColor;         //Navigation font color
+    font-size: $navFontSize;    //Navigation font size
+    text-decoration: none;
+}
+
+//SECTION 1
+//Slider section
+%sliderContainerSize {
+    width:100%;
+    min-height: 245px;
+}

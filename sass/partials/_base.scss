@@ -1,0 +1,40 @@
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.flexLeft {
+    @extend %flexRowStart;
+}
+.flexRight{
+    @extend %flexRowEnd;
+}
+.flexSpaceBetween{  //burger
+    @extend %flexRowSpace;
+}
+
+
+
+/*Global positioning settings inside grid columns*/
+//Header settings
+.head {
+    background-color: black;
+    min-height: 2.5rem;
+    color: white;
+    font-size: 0.875rem;
+}
+
+
+//Section 1 settings
+.sect1 {
+    min-height: 31.25rem;
+    background-color: lightblue;
+    background: linear-gradient(to bottom, rgba(250,250,250,1) 0%, rgba(250,250,250,1) 46%, rgba(247,247,247,1) 62%, rgba(230,230,230,1) 94%, rgba(230,230,230,1) 100%);
+}
+
+
+/*Section 2*/
+.sect2 {
+  height: 22rem;
+  background-color: white;
+}

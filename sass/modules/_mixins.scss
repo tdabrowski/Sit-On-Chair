@@ -1,0 +1,27 @@
+
+//Global Mixins for tablets
+
+@mixin mobileMedium{
+    @media screen and (min-width: #{map-get($RWDbreakpoints,MediumMobile)}){
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (min-width: #{map-get($RWDbreakpoints,Tablet)}){
+        @content;
+    }
+}
+
+
+
+@mixin laptop{
+    @media screen and (min-width: #{map-get($RWDbreakpoints,Laptop)}){
+        @content;
+    }
+}
+
+
+//MIXINS FOR SECTION1
+//Mixin RWD for arrow buttons

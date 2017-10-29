@@ -7,12 +7,184 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
 </head>
 <body>
-    
-    
-    <script src="js/scripts.js"></script>
+
+<!-- Header -->
+    <header class="head">
+        <div class="container">
+            <div class="row">
+                <div class="col-smx-12 col-mdx-6 col-lg-6 flexSpaceBetween"><!-- col-md-6-->
+                    <h1 class="head__logo">SIT <b class="head__bold">ON</b> CHAIR</h1> <!--Logo-->
+                    <div class="burger" id="burger">
+                        <div class="burgerContent"></div>
+                        <div class="burgerContent"></div>
+                        <div class="burgerContent"></div>
+                    </div>
+                </div>
+                <div class="col-smx-12 col-mdx-6 col-lg-6 flexRight head__nav">    <!-- col-md-6 Main navigation-->
+
+
+                    <ul class="head__nav__ul" id="nav">
+                      <li class="head__nav__li"><a class="head__nav__a" href="#">O FIRMIE</a>
+                        <ul class="head__subnav">
+                            <li class="head__subnav__li"><a class="head__subnav__a" href="#">Aktualności</a></li>
+                            <li class="head__subnav__li"><a class="head__subnav__a" href="#">Nasz team</a></li>
+                            <li class="head__subnav__li"><a class="head__subnav__a" href="#">Historia</a></li>
+                        </ul>
+                      </li>
+                      <li class="head__nav__li"><a class="head__nav__a" href="#">GALERIA</a></li>
+                      <li class="head__nav__li"><a class="head__nav__a" href="#">KONTAKT</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+      <!-- Section 1 -->
+    <section class="sect1">
+        <div class="container">
+            <div class="row">
+                <div class="col-smx-1  flexLeft">        <!--col-md-1 col-mix-1-->
+                  <button class="sect1__btn" id="previous">&lt;</button>
+                </div>
+
+                <div class=" col-smx-10  flexLeft "> <!--col-md-10 col-mix-10-->
+
+
+                        <ul class="sect1__list">
+
+                            <li class="sect1__list__item">
+                              <div class="sect1__slide">
+                                <div class="sect1__slide__col-1">
+                                    <img class="sect1__img" src="images/black_chair.png" alt="black chair">
+                                </div>
+                                <div class="sect1__slide__col-2">
+                                    <h1 class="sect1__h1">SIT <strong class="sect1__strong">ON</strong> OUR <strong class="sect1__strong">CHAIR</strong></h1>
+                                    <p class="sect1__p1">
+                                      Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna.
+                                    </p>
+                                    <a href="" class="sect1__btn3">ZOBACZ WIĘCEJ</a>
+                                </div>
+                              </div>
+                            </li>
+
+
+                            <li class="sect1__list__item slide__hidden">
+                              <div class="sect1__slide">
+                                    <div class="sect1__slide__col-1">
+                                        <img class="sect1__img red__chair" src="images/red_chair.png" alt="red chair">
+                                    </div>
+                                <div class="sect1__slide__col-2">
+                                    <h1 class="sect1__h1">OUR <strong class="sect1__strong">CHAIR</strong> TO <strong class="sect1__strong">SIT</strong></h1>
+                                    <p class="sect1__p1">
+                                      Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna.
+                                    </p>
+                                    <a href="" class="sect1__btn3">ZOBACZ WIĘCEJ</a>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                </div>
+
+                <div class="col-smx-1  flexRight">  <!--col-md-1 col-mix-1-->
+                    <button class="sect1__btn sect1__btn2" id="next">&gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sect2">
+        <div class="container">
+            <div class="row">
+                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                    <div class="sect2__img__box">
+                        <img class="sect2__img" src="images/box1_img.jpg" alt="box1">
+                        <div class="sect2__img__head">
+                            <span>Chair CLAIR</span>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                    <div class="sect2__img__box">
+                        <img class="sect2__img" src="images/box2_img.jpg" alt="box2">
+                        <div class="sect2__img__head">
+                            <span>Chair MARGARITA</span>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="sect2__box box_hidden">
+                        <div class="sect2__head">
+                            <span>Finds all inputs</span>
+                            <hr>
+                        </div>
+                        <p class="sect2__box__content">
+                            Finds all inputs that are not checked and<br>highlights the next sibling span. Notice there<br> is no change when clicking the checkboxes<br> since no click events have been linked.<br>
+                            <br>
+                            Notice there is no change when clicking the<br>checkboxes since no click events have been
+                        </p>
+                    </div>
+                </div>
+                <div class="col-smx-12 col-lg-4 flexColCenter">
+                    <div class="sect2__box">
+                        <div class="sect2__head">
+                            <span>Finds all inputs</span>
+                            <hr>
+                        </div>
+                        <p class="sect2__box__content">
+                            Finds all inputs that are not checked and highlights the next sibling span. Notice there is no change when clicking the checkboxes since no click events have been linked.
+                            <br>
+                            <br>Notice there is no change when clicking the checkboxes since no click events have been
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--
+    <section class="sect3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 flexColCenter">
+                    <div class="sect3__head">
+                        <span>Cennik</span>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 flexColCenter">
+                    <div class="zadanie5">
+                        <div class="zadanie5__circle1">
+                            <div class="zadanie5__circle2"></div>
+                        </div>
+                        <h3 class="zadanie5__head">nagłówek</h3>
+                        <h4 class="zadanie5__body">
+                            Sagittis vitae et leo duis ut diam quam. Tortor consequat id porta nibh venenatis cras sed felis.
+                        </h4>
+                        <button class="zadanie5_btn">Więcej informacji></button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 flexColCenter">
+
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 lexColCenter">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+-->
+
 </body>
 </html>

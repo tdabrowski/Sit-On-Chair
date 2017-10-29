@@ -1,0 +1,81 @@
+
+.sect3__head{
+
+    top:21px;
+    left:0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+
+.sect3__head hr {
+    border: 4px solid #24ba9f;
+    max-width: 142px;
+    margin-left:10px;
+}
+
+.sect3__head span {
+    display: block;
+    margin: 12px 1px -15px 14px;
+}
+
+/*Zadanie 5 */
+.zadanie5 {
+    //margin-top: 250px;
+    width:200px;
+    height:250px;
+    border:3px solid black;
+    position:relative;
+    z-index: 1;
+    display: inline-block;
+
+}
+
+.zadanie5__circle1{
+    border:3px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:-30px;
+    left:70px;
+    z-index: 20;
+}
+
+.zadanie5__circle2{
+    border:3px solid black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+
+
+.zadanie5__body {
+    text-align: center;
+    font-size: 12px;
+    padding: 12px;
+    font-weight: 400;
+}
+
+.zadanie5__head {
+    text-transform: uppercase;
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.zadanie5_btn {
+    display: inline-block;
+    padding: 8px 14px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 11px;
+    border: none;
+    margin-left: 40px;
+
+}
