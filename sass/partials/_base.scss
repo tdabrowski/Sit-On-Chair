@@ -35,6 +35,13 @@ html{
 
 /*Section 2*/
 .sect2 {
-  height: 22rem;
+  min-height: 22rem;
   background-color: white;
+}
+
+
+/*Section 3*/
+.sect3 {
+  min-height: 45.375rem;
+  background-color: #f1f1f1;
 }

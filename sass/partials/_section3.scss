@@ -1,6 +1,7 @@
 
 .sect3__head{
-
+    height: 156px;
+    width:100%;
     top:21px;
     left:0;
     background-color: rgba(255, 255, 255, 0.4);
@@ -15,67 +16,117 @@
 
 .sect3__head span {
     display: block;
-    margin: 12px 1px -15px 14px;
+    margin:0;
 }
 
-/*Zadanie 5 */
-.zadanie5 {
-    //margin-top: 250px;
-    width:200px;
-    height:250px;
-    border:3px solid black;
+
+
+
+//PRICE BOX
+.priceBox__containter{
+    height:560px;
+    width:100%;
+    @extend %flexColCenter;
+    justify-content: flex-end;
+    padding:0;
+    margin:0;
+
+}
+.priceBox {
+    //width:330px;
+    width:100%;
+    height:500px;
     position:relative;
-    z-index: 1;
-    display: inline-block;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #24ba9f;
+    color:white;
 }
 
-.zadanie5__circle1{
-    border:3px solid black;
+.priceBox::before{
+    content: '';
+    position: absolute;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: white;
-    position: absolute;
-    top:-30px;
-    left:70px;
-    z-index: 20;
+    top:-6.5%;
+    border-radius: 100%;
+    background-color: #24ba9f;
 }
 
-.zadanie5__circle2{
-    border:3px solid black;
+.priceBox::after{
+    content: '';
+    position: absolute;
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    background: black;
-    position: absolute;
-    top:10px;
-    left:10px;
+    top:-3.75%;
+    border-radius: 100%;
+    background-color: white;
 }
 
 
-.zadanie5__body {
+
+.priceBox .t0 {
+    font-size: 23px;
+    font-weight: 400;
+    margin-top:30px;
+}
+
+.priceBox__circleIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 125px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    color: #24ba9f;
+    background-color: white;
+}
+.priceBox__circleIn .num {
+    font-size: 44px;
+    display: block;
+    font-weight: bold;
+}
+
+.priceBox__circleIn .num sup {
+    font-size: 16px;
+    vertical-align: text-top;
+}
+.priceBox__circleIn .text {
+    display: block;
+    font-weight: bold;
+}
+
+.priceBox .t1 {
+    margin-top:30px;
+}
+
+.priceBox .t1, .t2, .t3 {
+    color:#a7a7a7;
+    display:block;
+    background-color: white;
+    width:98%;
+    font-size: 24px;
+    padding: 10px;
     text-align: center;
-    font-size: 12px;
-    padding: 12px;
     font-weight: 400;
 }
 
-.zadanie5__head {
-    text-transform: uppercase;
-    margin-top: 60px;
-    text-align: center;
-    font-weight: 400;
+.priceBox .t2 {
+    border-color: white;
+    background-color: #f1f1f1;
 }
 
-.zadanie5_btn {
-    display: inline-block;
-    padding: 8px 14px;
-    text-align: center;
-    color: white;
-    background-color: black;
-    font-size: 11px;
-    border: none;
-    margin-left: 40px;
-
+.pricebtn {
+    display:inline-block;
+    padding: 10px 30px;
+    margin-top:55px;
+    border-radius: 10px;
+    color: #24ba9f;
+    background-color: white;
+    font-size: 16px;
 }
