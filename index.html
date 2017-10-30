@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/scripts.js"></script>
 </head>
@@ -143,7 +144,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                <div class="col-smx-12 col-md-6 col-lg-4"><!--col-lg-4 flexColCenter-->
                     <div class="priceBox__containter">
                         <div class="priceBox priceBoxSecondColor">
                             <h3 class="t0 t0SecondColor">BASIC PLAN</h3>
@@ -157,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                <div class="col-smx-12 col-md-6 col-lg-4"><!--col-lg-4 flexColCenter-->
                     <div class="priceBox__containter">
                         <div class="priceBox priceBoxFirstColor">
                             <h3 class="t0 t0FirstColor">STANDARD PLAN</h3>
@@ -172,9 +173,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-smx-12 col-lg-4 flexColCenter">
+                <div class="col-smx-12 col-lg-4"><!--col-lg-4 flexColCenter-->
                     <div class="priceBox__containter">
-                        <div class="priceBox priceBoxSecondColor">
+                        <div class="priceBox priceBoxSecondColor ">
                             <h3 class="t0 t0SecondColor">ADVANCE PLAN</h3>
                             <div class="priceBox__circleIn priceBox__circleInFirstColor">
                                 <span class="num">211<sup>00</sup></span>
@@ -201,12 +202,31 @@
                     </div>
                 </div>
             </div>
+            <form>
             <div class="row">
-                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                <div class="col-smx-12 col-md-12 col-lg-8 flexColCenter border">
+                    <div class="sect4__input__container"><!-- Name -->
+                        <input class="sect4__input" name="name" type="text" id="name" placeholder="Imię">
+                    </div>
+                    <div class="sect4__input__container"><!--Email -->
+                        <input class="sect4__input" name="email" type="email" id="email" placeholder="email">
+                    </div>
+                    <div class="sect4__input__container"><!-- Message -->
+                        <textarea class="sect4__input text" name="message" id="message" placeholder="Wiadomość" rows="4" cols="6"></textarea>
+                    </div>
                 </div>
-                <div class="col-smx-12 col-md-6 col-lg-4 flexColCenter">
+                <div class="col-smx-12 col-md-12 col-lg-4 flexColCenter border">
+                    <img src="images/red_chair.png" alt="Red chair" class="sect4__form__img">
+                    <div class="sect4__checkbox__container">
+                        <span class="sect4__acceptImg">
+                            <input class="sect4__checkbox" type="checkbox" id="checkbox" name="checkbox">
+                        </span>
+                        <label class="sect4__checkbox__label" for="checkbox">Zgadzam się na przetwarzanie danych osobowych</label>
+                    </div>
+                   <input class="sect4__submit" type="submit" value="WYŚLIJ">
                 </div>
             </div>
+            </form>
         </div>
     </section>
 

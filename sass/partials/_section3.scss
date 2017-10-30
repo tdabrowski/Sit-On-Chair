@@ -1,6 +1,9 @@
 /*SECTION 3 ELEMENTS SETTINGS----------
 -------------------------------------*/
 /*GLOBAL CLASSES*/
+
+
+
 /*SECTION HEADER SETTINGS*/
 .sect3__header{
     @extend %h2Setup;
@@ -19,6 +22,9 @@
     justify-content: flex-end;
     padding:0;
     margin:0;
+    /*&.width-conversion{
+        width:90%;
+    }*/
     .priceBox { //main box settings
         @extend %priceBoxContainer;
         &:before{
@@ -52,6 +58,7 @@
             border: 2px solid $fourColor;
         }
     }
+
 }
 
 
@@ -106,7 +113,7 @@
         font-size: $circleInFont;
         sup {
             font-size: $circleInSupFont;
-            vertical-align: text-top;
+            vertical-align: super;
         }
     }
     .text,.num {

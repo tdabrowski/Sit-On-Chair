@@ -9,3 +9,124 @@
 .sect4__header__hr {
     @extend %hrSetup;
 }
+
+
+/*FORM TEXT INPUTS*/
+.sect4__input__container {
+    margin-top:25px;
+    .sect4__input {
+        width:100%;
+        max-width: 630px;
+        font-family: 'Raleway', sans-serif;
+        color:$sevenColor;
+        border:1px solid $secondColor;
+        font-size: $formInputFont;
+        padding: 18px 0;
+        text-indent: 10px;
+        &::placeholder {
+            color: $fourColor;
+            font-size: $formInputFont;
+            text-indent: 10px;
+        }
+    }
+    .text {
+        resize: none;
+    }
+}
+
+
+/*FORM IMAGE*/
+.sect4__form__img{
+    display:none;
+    @media screen and (min-width: 900px){
+        display:inline-block;
+        margin:0 20px;
+    }
+}
+
+
+/*CHECKBOX*/
+.sect4__checkbox__container{
+    margin-top: 40px;
+    &:after, &:before{
+        clear:both;
+        display:block;
+    }
+    .sect4__acceptImg{
+        display:inline-block;
+        //position: relative;
+        float:left;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border:1px solid $secondColor;
+        cursor:pointer;
+        .sect4__checkbox{
+            position: relative;
+            background-color: white;
+            width:48px;
+            height: 48px;
+            &:checked:after{
+                content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                width:48px;
+                height:48px;
+                background-color: white;
+                background-image: url(../images/form_ok.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &:not(:checked):before{
+                content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                width:48px;
+                height:48px;
+                background-color: white;
+            }
+        }
+    }
+    .sect4__checkbox__label{
+        font-size: 20px;
+        color:$fourColor;
+        text-align: left;
+    }
+}
+
+
+
+
+
+/*FORM BUTTON*/
+.sect4__submit {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color:$firstColor;
+    background-color: $secondColor;
+    padding: 15px 40px;
+    border-radius: 10px;
+    margin:15px 0 15px 15px;
+    @media screen and (min-width: 704px){
+        padding: 15px 110px;
+        border-radius: 10px;
+        margin:35px 0 10px 0;
+        font-size: 30px;
+    }
+    border: none;
+    outline: none;
+    &:hover {
+        background-color: rgba(36,186,159,0.5);
+        color:$firstColor;
+        transition: 0.5s background-color;
+    }
+    &:active {
+        box-shadow: 4px 4px 3px #888888;
+    }
+}

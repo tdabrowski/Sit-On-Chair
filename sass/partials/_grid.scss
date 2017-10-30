@@ -39,14 +39,26 @@
                     float:left;
                     min-height: 0.0625rem;
                     width: ($columnSize) *$i;
-                    padding-right: 0.625rem;
-                    padding-left: 0.625rem;
+                    padding-right: 15px;//0.625rem;
+                    padding-left: 15px;//0.625rem;
                 }
             }
 
             //dodatek do wykreowania poprawnych gutterow - usuwa prawy
             [class*='col-md-']:last-of-type {
                   padding-right: 0;
+            }
+        }
+
+        //Desktop settings without gutters
+        @media screen and (min-width: 900px){
+            @for $i from 1 through $columns {
+                .col-lgx-#{$i} {
+                    float:left;
+                    min-height: 0.0625rem;
+                    width: ($columnSize) *$i;
+                    padding: 0 0 0 0;
+                }
             }
         }
 
@@ -57,7 +69,7 @@
                     float:left;
                     min-height: 0.0625rem;
                     width: ($columnSize) *$i;
-                    padding-right: 20px;
+                    padding-right: 30px; //bylo 20
                     padding-left:0;
                 }
             }
