@@ -21,6 +21,35 @@
     }
 }
 
+
+//GENERATOR POJEDYNCZYCH KOLUMN DLA GRIDA
+//$name - człon nazwy: smx,mdx,lgx,mdl,mdp,mdlp,lgp,lglp,lgl
+//$cols - liczba kolumn z siatki
+//$colSize - szerokość pojedyńczej kolumny
+//$right - guter prawy (padding)
+//$left - gutter lewy (padding)
+@mixin colConstructor($name,$cols,$colSize,$right,$left){
+    .col-#{$name}-#{$cols} {
+        float:left;
+        min-height: 0.0625rem;
+        width: $colSize *$cols;
+        padding: 0 $right 0 $left;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------------------------------------
 //MIXINS FOR SECTION1
 //Mixin RWD for arrow buttons

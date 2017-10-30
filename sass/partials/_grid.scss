@@ -1,82 +1,51 @@
-/*Grid 12 columns*/
+/*Grid 12 columns mixed sized with and without gutters*/
 .container{
     width:100%;
     max-width:1054px;
     margin: 0 auto;
-
     .row:before, .row:after {
         content: '';
         clear:both;
         display:block;
     }
-
     .row{
-        //border:0.0625rem solid red;
-        //Mobile settings without gutters
-        @for $i from 1 through $columns {
-            .col-smx-#{$i} {
-                float:left;
-                min-height: 0.0625rem;
-                width: ($columnSize) *$i;
-            }
-        }
 
-        //Tablet settings without gutters
+        /*Mobile settings*/
+        /*col-smx-1  gutters = 0px;*/
+        @include colConstructor(smx,1,$columnSize,0,0);
+        /*col-smx-10  gutters = 0px;*/
+        @include colConstructor(smx,10,$columnSize,0,0);
+        /*col-smx-12  gutters = 0px;*/
+        @include colConstructor(smx,12,$columnSize,0,0);
+
+        /*Tablet settings*/
         @media screen and (min-width: 704px){
-            @for $i from 1 through $columns {
-                .col-mdx-#{$i} {
-                    float:left;
-                    min-height: 0.0625rem;
-                    width: ($columnSize) *$i;
-                }
-            }
+            /*col-mdx-2  gutters = 0px;*/
+            @include colConstructor(mdx,2,$columnSize,0,0);
+            /*col-mdx-4  gutters = 0px;*/
+            @include colConstructor(mdx,4,$columnSize,0,0);
+            /*col-mdx-6  gutters = 0px;*/
+            @include colConstructor(mdx,6,$columnSize,0,0);
+            /*col-mdlp-6  gutters left,right = 15px;*/
+            @include colConstructor(mdlp,6,$columnSize,15px,15px);
+            /*col-mdlp-12  gutters left,right = 15px;*/
+            @include colConstructor(mdlp,12,$columnSize,15px,15px);
+            /*col-mdl-12  gutters left = 30px;*/
+            @include colConstructor(mdl,12,$columnSize,0,30px);
         }
 
-        //Tablet settings with gutters on left-rigth
-        @media screen and (min-width: 704px){
-            @for $i from 1 through $columns {
-                .col-md-#{$i} {
-                    float:left;
-                    min-height: 0.0625rem;
-                    width: ($columnSize) *$i;
-                    padding-right: 15px;//0.625rem;
-                    padding-left: 15px;//0.625rem;
-                }
-            }
-
-            //dodatek do wykreowania poprawnych gutterow - usuwa prawy
-            [class*='col-md-']:last-of-type {
-                  padding-right: 0;
-            }
-        }
-
-        //Desktop settings without gutters
+        /*Laptop and higher settings*/
         @media screen and (min-width: 900px){
-            @for $i from 1 through $columns {
-                .col-lgx-#{$i} {
-                    float:left;
-                    min-height: 0.0625rem;
-                    width: ($columnSize) *$i;
-                    padding: 0 0 0 0;
-                }
-            }
-        }
-
-        //Desktop settings with gutters on right
-        @media screen and (min-width: 900px){
-            @for $i from 1 through $columns {
-                .col-lg-#{$i} {
-                    float:left;
-                    min-height: 0.0625rem;
-                    width: ($columnSize) *$i;
-                    padding-right: 30px; //bylo 20
-                    padding-left:0;
-                }
-            }
-            //dodatek do wykreowania poprawnych gutterow
-            [class*='col-lg-']:last-of-type {
-                  padding-right: 0;
-            }
+            /*col-lgx-4  gutters = 0px;*/
+            @include colConstructor(lgx,4,$columnSize,0,0);
+            /*col-lglp-4  gutters left,right = 15px;*/
+            @include colConstructor(lglp,4,$columnSize,15px,15px);
+            /*col-lgl-4  gutters left = 30px;*/
+            @include colConstructor(lgl,4,$columnSize,0,30px);
+            /*col-lgp-4  gutters right = 30px;*/
+            @include colConstructor(lgp,4,$columnSize,30px,0);
+            /*col-lgp-8  gutters right = 30px;*/
+            @include colConstructor(lgp,8,$columnSize,30px,0);
         }
     }
 }
