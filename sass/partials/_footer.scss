@@ -1,0 +1,74 @@
+
+/*TEXT COPYRIGHT*/
+.footer__text{
+    color:$fourColor;
+    display:inline-block;
+    padding: 0.75rem 0;
+}
+
+
+/*LOGO*/
+.footer__logo {
+    display: inline-block;
+    padding: 0.75rem 0;
+    color:$fourColor;
+    margin-left: 30px;
+    font-weight: bold;
+}
+.footer__bold {
+    color:#b3b3b3;
+    font-weight: bolder;
+}
+
+
+/*LINKS*/
+.footer__nav {
+    font-size: 0;
+}
+.footer__nav__ul {
+    list-style: none;
+    margin-right:10px;
+    .footer__nav__li {
+        display: inline-block;
+        padding: 0.75rem 2px 0.75rem 0;
+        .footer__nav__a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                @extend %linksDecoration;
+                font-weight: bold;
+                color:black;
+            }
+        }
+        .footer__link1{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(../images/flickr.png);
+        }
+        .footer__link2{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(../images/vimeo.png);
+        }
+        .footer__link3{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(../images/pinterest.png);
+        }
+        .footer__link4{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(../images/twitter.png);
+        }
+    }
+}
+
+/*End Footer settings*/
