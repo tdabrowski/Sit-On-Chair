@@ -1,3 +1,14 @@
 //GLOBAL TEXT COLORS
 $firstColor: white;
-$secondColor: #24ba9f;
+$secondColor: #24ba9f; //global green
+$thirdColor: grey;    //global grey for p
+$fourColor: #c2c2c2;  //color for section 3 box container borderColor
+$fiveColor: #f9f9f9; //color for section 3 box container backgroundColor
+$sixColor:#a7a7a7 ; //color for section 3 box content text
+
+//Colors for box line content background
+$boxContentBacColors:(
+    one: #f1f1f1,
+    two: #e4e4e4,
+    three: white
+);

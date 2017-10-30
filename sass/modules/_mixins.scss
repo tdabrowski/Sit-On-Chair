@@ -1,27 +1,55 @@
-
-//Global Mixins for tablets
-
+//----------------------------------------
+//RWD MIXINS
+//Global Mixins for medium mobiles
 @mixin mobileMedium{
     @media screen and (min-width: #{map-get($RWDbreakpoints,MediumMobile)}){
         @content;
     }
 }
 
-
+//Global mixins for tablets
 @mixin tablet{
     @media screen and (min-width: #{map-get($RWDbreakpoints,Tablet)}){
         @content;
     }
 }
 
-
-
+//Global mixins for laptops
 @mixin laptop{
     @media screen and (min-width: #{map-get($RWDbreakpoints,Laptop)}){
         @content;
     }
 }
 
-
+//-----------------------------------------
 //MIXINS FOR SECTION1
 //Mixin RWD for arrow buttons
+
+
+//-----------------------------------------
+//MIXINS FOR SECTION3
+//PRICEBOX
+//Mixin for small circles in price container
+/*
+@mixin smallCircle($size,$top,$color,$borderColor){
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    width: $size;
+    height: $size;
+    top:$top;
+    background-color: $color;
+    border: 1px solid $borderColor;
+}
+
+//Price box container mixin
+@mixin priceBox($backgroundColor,$borderColor){
+    width:100%;
+    height:500px;
+    position:relative;
+    @extend %flexColCenter;
+    justify-content: flex-start;
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+}
+*/

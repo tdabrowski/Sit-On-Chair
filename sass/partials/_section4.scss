@@ -1,0 +1,11 @@
+/*SECTION 4 ELEMENTS SETTINGS----------
+-------------------------------------*/
+/*GLOBAL CLASSES*/
+/*SECTION HEADER SETTINGS*/
+.sect4__header{
+    @extend %h2Setup;
+}
+
+.sect4__header__hr {
+    @extend %hrSetup;
+}

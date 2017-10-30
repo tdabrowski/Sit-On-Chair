@@ -1,7 +1,7 @@
 /*Grid 12 columns*/
 .container{
     width:100%;
-    max-width: 64rem; //1024px
+    max-width:1054px;
     margin: 0 auto;
 
     .row:before, .row:after {
@@ -43,7 +43,7 @@
                     padding-left: 0.625rem;
                 }
             }
-            
+
             //dodatek do wykreowania poprawnych gutterow - usuwa prawy
             [class*='col-md-']:last-of-type {
                   padding-right: 0;

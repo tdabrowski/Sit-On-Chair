@@ -16,7 +16,7 @@ html{
 
 
 /*Global positioning settings inside grid columns*/
-//Header settings
+/*Header settings*/
 .head {
     background-color: black;
     min-height: 2.5rem;
@@ -25,7 +25,7 @@ html{
 }
 
 
-//Section 1 settings
+/*Section 1 settings*/
 .sect1 {
     min-height: 31.25rem;
     background-color: lightblue;
@@ -33,15 +33,22 @@ html{
 }
 
 
-/*Section 2*/
+/*Section 2 settings*/
 .sect2 {
   min-height: 22rem;
   background-color: white;
 }
 
 
-/*Section 3*/
+/*Section 3 settings*/
 .sect3 {
   min-height: 45.375rem;
   background-color: #f1f1f1;
+}
+
+
+/*Section 4 settings*/
+.sect4 {
+  min-height: 530px;
+  background-color: white;
 }
