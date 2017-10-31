@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/scripts.js"></script>
+    <script src="js/calculator.js"></script>
 </head>
 <body>
     <!-- New gred setup  -->
@@ -180,6 +181,92 @@
             </div>
         </div>
     </section>
+
+
+    <section class="sect__calc"> <!--section calculator-->
+        <div class="container">
+            <div class="row">
+                <div class="col-smx-12 col-mdlp-6 col-lgl-4 flexColCenter">
+                    <section class="flexColCenter">
+                        <header>
+                            <h3 class="sect__calc__h3">SKOMPONUJ SWOJE KRZESŁO</h3>
+                            <span class="green_bell"></span>
+                        </header>
+
+                        <div class="form">
+                            <div class="drop_down_list">
+                                <span class="list_label" id="typeLable">Wybierz rodzaj</span>
+                                <span class="list_arrow" id="chairTypeButton"></span>
+                                <ul class="list_panel" id="chairType">
+                                    <li data-type-id="Clair">Chair Clair</li>
+                                    <li data-type-id="Margarita">Chair Margarita</li>
+                                    <li data-type-id="Selena">Chair Selena</li>
+                                </ul>
+                            </div>
+                            <div class="drop_down_list">
+                                <span class="list_label" id="colorLable">Wybierz kolor</span>
+                                <span class="list_arrow" id="chairColorButton"></span>
+                                <ul class="list_panel" id="chairColor">
+                                    <li data-color-id="Czerwony">Czerwony</li>
+                                    <li data-color-id="Czarny">Czarny</li>
+                                    <li data-color-id="Pomarańczowy">Pomarańczowy</li>
+                                </ul>
+                            </div>
+                            <div class="drop_down_list">
+                                <span class="list_label" id="factoryLable">Wybierz materiał</span>
+                                <span class="list_arrow" id="chairFactoryButton"></span>
+                                <ul class="list_panel" id="chairFactory">
+                                    <li data-factory-id="Tkanina">Tkanina</li>
+                                    <li data-factory-id="Skóra">Skóra</li>
+                                </ul>
+                            </div>
+                            <div class="checkbox check-box">
+                                <input type="checkbox" id="transport" data-transport-price="200">
+                                <label for="transport">Transport</label>
+                            </div>
+                            <!--<div class="checkbox"></div>-->
+                            <!--<span class="list_label inline_text">Transport</span>-->
+                        </div>
+                    </section>
+                </div>
+                <div class="col-smx-12 col-mdlp-6 col-lglp-4 flexColCenter">
+                    <section class="image_part inline">
+                        <img src="images/red_chair.png">
+                    </section>
+                </div>
+                <div class="col-smx-12 col-mdlp-12 col-lgp-4 flexColCenter">
+                    <section class="summary_part inline">
+                        <header class="application_align_right">
+                            <h3 class="sect__calc__h3">SKOMPONUJ SWOJE KRZESŁO</h3>
+                            <h3 >PODSUMOWANIE</h3>
+                            <span class="green_bell"></span>
+                        </header>
+
+                        <div class="summary_panel">
+                            <div class="panel_left">
+                                <h4 class="title" id="typeSummaryName">Twój fotel</h4>
+                                <span class="color" id="colorSummaryName"></span>
+                                <span class="pattern" id="factorySummaryName"></span>
+                                <span class="transport" id="transportSummaryName"></span>
+                            </div>
+                            <div class="panel_right">
+                                <h4 class="title value" id="typeSummaryPrice"></h4>
+                                <span class="color value" id="colorSummaryPrice"></span>
+                                <span class="pattern value" id="factorySummaryPrice"></span>
+                                <span class="transport value" id="transportSummaryPrice"></span>
+                            </div>
+                            <div class="sum_label">SUMA</div>
+                            <div class="sum"><strong id="summaryCost"></strong></div>
+                        </div>
+                        <a href="" class="green_button">Zamawiam</a>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="sect4">
         <div class="container">
             <div class="row">

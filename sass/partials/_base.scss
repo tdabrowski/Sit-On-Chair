@@ -37,6 +37,14 @@ html{
 }
 
 
+/*Section Calculator settings*/
+.sect__calc {
+  min-height: 25rem;
+  background-color: map-get($SectionsBackgroundColors,section4);
+  background-color: #f9f9f9;
+}
+
+
 /*Section 4 settings*/
 .sect4 {
   min-height: 33.125rem;
