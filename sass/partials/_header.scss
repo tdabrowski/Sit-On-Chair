@@ -7,7 +7,7 @@
     padding: 0.75rem 0;
 }
 .head__bold {
-    color:$secondColor;
+    color:map-get($HeaderSectionColors,textSecond);
     font-weight: bold;
 }
 
@@ -19,7 +19,7 @@
 .burgerContent{
     width: 2.1875rem;
     height: 0.3125rem;
-    background-color: white;
+    background-color: map-get($HeaderSectionColors,contentMain);
     margin: 0.375rem 0;
 }
 
@@ -42,6 +42,9 @@
                 @extend %linksDecoration;
                 font-weight: bold;
             }
+            &:hover{
+                color:map-get($HeaderSectionColors,hoverNav);
+            }
         }
     }
 }
@@ -50,12 +53,15 @@
 /*SUBNAVIGATION*/
 .head__subnav {
     position: absolute;
-    background-color: black;
+    background-color: map-get($HeaderSectionColors,backgroundSubnav);
     width: 7.5rem;
     height: 6.25rem;
-    display: none; //none by default
+    display: none; //hidden by default
     top: 130%;
     left: 30%;
+    @media (max-width: 703px){
+        z-index: 1;
+    }
     &::after {
         content: '';
         position: absolute;
@@ -73,6 +79,9 @@
         .head__subnav__a:hover,
         .head__subnav__a:active {
             @extend %linksDecoration;
+        }
+        .head__subnav__a:hover{
+            color:map-get($HeaderSectionColors,hoverNav);
         }
     }
 }

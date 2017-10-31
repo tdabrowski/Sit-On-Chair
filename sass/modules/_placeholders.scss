@@ -42,11 +42,10 @@
 //HEADER SECTION
 //Navigation
 %linksDecoration{
-    color: $firstColor;         //Navigation font color
-    font-size: $navFontSize;    //Navigation font size
+    color: map-get($HeaderSectionColors,mainNav); //Navigation font color
+    font-size: map-get($HeaderFontSizes,mainFont);    //Navigation font size
     text-decoration: none;
 }
-
 
 
 //---------------------------------------------------------

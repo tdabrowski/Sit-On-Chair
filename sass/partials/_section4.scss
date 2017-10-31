@@ -40,6 +40,7 @@
     display:none;
     @media screen and (min-width: 900px){
         display:inline-block;
+        @include animate(showIMG,2.5s,1,ease-out);  //animate image
         margin:0 20px;
     }
 }

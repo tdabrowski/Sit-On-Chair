@@ -1,3 +1,34 @@
+//MAIN SITE SECTIONS BACKGROUND COLORS
+$SectionsBackgroundColors:(
+    header: black,
+    section1:lightblue,
+    section2: white,
+    section3: #f1f1f1,
+    section4: white,
+    footer: white
+);
+
+
+//HEADER SPECIFIC SECTION COLORS
+$HeaderSectionColors:(
+    textMain:white,    //main text color
+    textSecond:#24ba9f, //second text color
+    contentMain:white, //burger background color
+    mainNav:white,     //main navigation text color
+    hoverNav:#c2c2c2,  //main navigation text on hover color
+    backgroundSubnav:black  //background color subnavigation
+);
+
+
+//SECTION1 SPECIFIC SECTION COLORS
+$Section1Colors:(
+    textMain:white,    //main text color
+    textSecond:#24ba9f, //second text color
+    hoverArrow:#c2c2c2,  //main slider buttons on hover color
+);
+
+
+
 //GLOBAL TEXT COLORS
 $firstColor: white;
 $secondColor: #24ba9f; //global green

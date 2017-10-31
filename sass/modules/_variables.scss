@@ -1,20 +1,35 @@
+//---------------------------------------------
 //GRID SETTINGS
 $columns: 12;                  //number of columns
 $columnSize: 100%/$columns;    //size of single column
 
 
-//MEDIA QUERY SETTINGS RWD
-//$tablet-width: 800px;
+//RWD GLOBAL BREAKPOINTS FOR GRID
+$GridBreakpoints:(
+    tablet:704px,
+    laptop:900px
+);
+
+
+//----------------------------------------------
+//HEADER SPECIFIC FONT SETUP
+$HeaderFontSizes:(
+    mainFont:0.875rem
+);
+//FONTS - HEADER
+//$navFontSize: 0.875rem;
+//$mainHeaderFont:0.875rem;
+//$mainFooterFont: 18px;
+
+
+//----------------------------------------------
+//SECTION1 SLIDER SPECIFIC SETUP
+//MEDIA QUERY SLIDER SETTINGS
 $RWDbreakpoints:(
     MediumMobile: 600px,
     Tablet: 800px,
     Laptop: 966px
 );
-
-
-//FONTS - HEADER
-$navFontSize: 0.875rem;
-
 
 
 //FONTS - SECTION1 SLIDER BUTTONS
@@ -35,6 +50,18 @@ $sliderContentFontSize: (
     tabletButton3: 21px,
     mobileButton3: 18px
 );
+
+
+
+
+
+
+//FOOTER SPECIFIC FONT SETUP
+$FooterFontSizes:(
+    mainFont:1.125rem
+);
+
+
 
 //FONTS - SECTION 3,4 HEADER
 $section34HeaderFont: 23px;

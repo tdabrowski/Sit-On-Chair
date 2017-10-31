@@ -11,6 +11,7 @@
     position: relative;
     .sect2__img {
         display: inline-block;
+        @include animate(showIMG,2.5s,1,ease-out);  //animate image
         object-fit: fill;
         z-index: 1;
         min-height: 226px;

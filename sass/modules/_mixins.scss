@@ -1,20 +1,35 @@
 //----------------------------------------
-//RWD MIXINS
-//Global Mixins for medium mobiles
+//RWD GLOBAL MIXINS FOR GRID
+@mixin GridTablet{  //704px
+    @media screen and (min-width: #{map-get($GridBreakpoints,tablet)}){
+        @content;
+    }
+}
+
+@mixin GridLaptop{  //900px
+    @media screen and (min-width: #{map-get($GridBreakpoints,laptop)}){
+        @content;
+    }
+}
+
+
+//----------------------------------------
+//MIXINS FOR SLIDER
+//Media query for medium mobiles 600px
 @mixin mobileMedium{
     @media screen and (min-width: #{map-get($RWDbreakpoints,MediumMobile)}){
         @content;
     }
 }
 
-//Global mixins for tablets
+//Media query for tablets 800px
 @mixin tablet{
     @media screen and (min-width: #{map-get($RWDbreakpoints,Tablet)}){
         @content;
     }
 }
 
-//Global mixins for laptops
+//Media query for laptops 966px
 @mixin laptop{
     @media screen and (min-width: #{map-get($RWDbreakpoints,Laptop)}){
         @content;
@@ -22,12 +37,13 @@
 }
 
 
-//GENERATOR POJEDYNCZYCH KOLUMN DLA GRIDA
-//$name - człon nazwy: smx,mdx,lgx,mdl,mdp,mdlp,lgp,lglp,lgl
-//$cols - liczba kolumn z siatki
-//$colSize - szerokość pojedyńczej kolumny
-//$right - guter prawy (padding)
-//$left - gutter lewy (padding)
+//-------------------------------------------
+//GENERATOR SINGLE CUSTOMIZED COLUMNS FOR GRID
+//$name - name part: smx,mdx,lgx,mdl,mdp,mdlp,lgp,lglp,lgl
+//$cols - number of columns from grid
+//$colSize - width of single column
+//$right - gutter right (padding)
+//$left - gutter left (padding)
 @mixin colConstructor($name,$cols,$colSize,$right,$left){
     .col-#{$name}-#{$cols} {
         float:left;
@@ -42,7 +58,12 @@
 
 
 
-
+//GLOBAL ANIMATION PREFIX MIXIN
+@mixin animate($keyName,$duration,$repeatCount,$type){
+    animation: $keyName $duration $repeatCount $type;
+    -moz-animation: $keyName $duration $repeatCount $type;
+    -webkit-animation: $keyName $duration $repeatCount $type;
+}
 
 
 
@@ -55,10 +76,13 @@
 //Mixin RWD for arrow buttons
 
 
+
+
+
 //-----------------------------------------
 //MIXINS FOR SECTION3
 //PRICEBOX
-//Mixin for small circles in price container
+//Mixin for small circles in price container - unused
 /*
 @mixin smallCircle($size,$top,$color,$borderColor){
     content: '';

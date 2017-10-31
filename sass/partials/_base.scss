@@ -1,38 +1,24 @@
+/*GLOBAL DOCUMENT SETTINGS*/
 html{
-    font-size: 16px;
-    //font-family: sans-serif;
+    font-size: 16px;            //GLOBAL 1REM SETUP
     font-family: 'Raleway', sans-serif;
 }
 
-.flexLeft {
-    @extend %flexRowStart;
-}
-.flexRight{
-    @extend %flexRowEnd;
-}
-.flexSpaceBetween{  //burger
-    @extend %flexRowSpace;
-}
-.flexContent {
-    @extend %flexContent;
-}
 
-
-
-/*Global positioning settings inside grid columns*/
+/*GLOBAL SECTIONS SETTINGS*/
 /*Header settings*/
 .head {
-    background-color: black;
+    background-color: map-get($SectionsBackgroundColors,header);
     min-height: 2.5rem;
-    color: white;
-    font-size: 0.875rem;
+    color: map-get($HeaderSectionColors,textMain);
+    font-size: map-get($HeaderFontSizes,mainFont);
 }
 
 
 /*Section 1 settings*/
 .sect1 {
     min-height: 31.25rem;
-    background-color: lightblue;
+    background-color: map-get($SectionsBackgroundColors,section1);
     background: linear-gradient(to bottom, rgba(250,250,250,1) 0%, rgba(250,250,250,1) 46%, rgba(247,247,247,1) 62%, rgba(230,230,230,1) 94%, rgba(230,230,230,1) 100%);
 }
 
@@ -40,28 +26,28 @@ html{
 /*Section 2 settings*/
 .sect2 {
   min-height: 22rem;
-  background-color: white;
+  background-color: map-get($SectionsBackgroundColors,section2);
 }
 
 
 /*Section 3 settings*/
 .sect3 {
   min-height: 45.375rem;
-  background-color: #f1f1f1;
+  background-color: map-get($SectionsBackgroundColors,section3);
 }
 
 
 /*Section 4 settings*/
 .sect4 {
-  min-height: 530px;
-  background-color: white;
+  min-height: 33.125rem;
+  background-color: map-get($SectionsBackgroundColors,section4);
 }
 
 
 /*Footer settings*/
 .footer {
-    background-color: white;
-    min-height: 150px;
-    font-size: 18px;
-    margin-top:30px;
+    background-color: map-get($SectionsBackgroundColors,footer);
+    min-height: 9.375rem;
+    font-size: map-get($FooterFontSizes,mainFont);
+    margin-top:1.875rem;
 }

@@ -12,22 +12,25 @@
 
 /*SLIDER BUTTONS SETTINGS*/
 .sect1__btn {  //left,right button
-  display:inline-block;
-  width:100%;
-  min-height: 31.25rem;
-  background: transparent;
-  text-align: left;
-  font-size: map-get($sliderButtonsFontSize, mobile);
-  @include mobileMedium{
-    font-size: map-get($sliderButtonsFontSize, desktop);
-  }
-  color:$secondColor;
-  border: none;
-  outline: none;
-  padding: 0;
+    display:inline-block;
+    width:100%;
+    min-height: 31.25rem;
+    background: transparent;
+    text-align: left;
+    font-size: map-get($sliderButtonsFontSize, mobile);
+    @include mobileMedium{
+        font-size: map-get($sliderButtonsFontSize, desktop);
+    }
+    color:map-get($Section1Colors,textSecond);
+    border: none;
+    outline: none;
+    padding: 0;
+    &:hover{
+        color: map-get($Section1Colors,hoverArrow);
+    }
 }
 .sect1__btn2 {  //right button
-  text-align: right;
+    text-align: right;
 }
 
 
@@ -35,28 +38,23 @@
 .sect1__list{
     list-style: none;
     .sect1__list__item{
-        &.slide__hidden{                    //List items hidden default
+        &.slide__hidden{  //List items hidden default
             display: none;
         }
         .sect1__slide{
             @extend %flexColCenter;
-            .sect1__slide__col-1{           //Image container
+            .sect1__slide__col-1, .sect1__slide__col-2{  //Image and text cols
                 @extend %flexColCenter;
                 @extend %sliderContainerSize;
             }
-            .sect1__slide__col-2{           //Text container
-                @extend %flexColCenter;
-                @extend %sliderContainerSize;
-            }
-            @include tablet{                //Mixin media query
+            @include tablet{
                 flex-direction: row;
-                .sect1__slide__col-1{       //Image container
+                .sect1__slide__col-1, .sect1__slide__col-2{
                     width:40%;
                     height: 30.875rem;
                 }
-                .sect1__slide__col-2{       //Text container
+                .sect1__slide__col-2{   //Text container size
                     width: 60%;
-                    height: 30.875rem;
                 }
             }
         }
@@ -69,6 +67,7 @@
     display: inline-block;
     object-fit: none;
     height: 84%;
+    @include animate(showIMG,2.5s,1,ease-out);  //animate image
     @include mobileMedium{
         margin-top: 3.125rem;
     }
@@ -76,6 +75,7 @@
         object-fit: cover;
     }
 }
+
 
 .red__chair {
     object-fit: contain;
@@ -86,14 +86,15 @@
 /*HEADER*/
 .sect1__h1{
     font-size: map-get($sliderContentFontSize,mobileHeader);
-    @media (min-width:801px)and(max-width: 900px) {
+    @include animate(showContent,1s,1,steps(60));
+    @include tablet{
         font-size: map-get($sliderContentFontSize,tabletHeader);
     }
-    @media (min-width:901px) {
+    @include GridLaptop{
         font-size: map-get($sliderContentFontSize,laptopHeader);
         margin-top:0.625rem;
     }
-    display: inline-block;    //tu skonczylem stylowanie
+    display: inline-block;
     text-align: center;
     .sect1__strong{
         color:$secondColor;
@@ -101,7 +102,8 @@
 }
 /*PARAGRAPH*/
 .sect1__p1 {
-    font-size: 14px;
+    font-size:map-get($sliderContentFontSize,mobileParagraph);
+    @include animate(showHidden,2s,1,ease-in-out);
     line-height: 21px;
     @media (min-width:801px) and (max-width: 900px) {
         font-size: map-get($sliderContentFontSize,tabletParagraph);
@@ -113,10 +115,9 @@
     }
     text-align: center;
     margin-top: 18px;
-    //line-height: 23px;
     padding:0 40px 0 40px;
     display: inline-block;
-    color: grey;
+    color: grey;                //tu skonczylem stylowanie
 }
 
 //Button in slide
@@ -127,6 +128,7 @@
     text-align: center;
     text-decoration: none;
     line-height: 21px;
+    @include animate(showHidden,2s,1,ease-in-out);
     font-size: map-get($sliderContentFontSize,mobileButton3);
     @media (min-width:801px) and (max-width: 900px) {
         font-size: map-get($sliderContentFontSize,tabletButton3);
@@ -143,11 +145,12 @@
     margin:20px 0 20px 0;
     padding: 14px 48px 9px 48px;
     &:hover {
-        color: $secondColor;
-        background-color: $firstColor;
-        box-shadow: 2px 2px 1px #888888;
+        background-color: rgba(36,186,159,0.5);
+        color:$firstColor;
+        transition: 0.5s background-color;
     }
     &:active {
-        box-shadow: 1px 1px 1px #888888;
+        box-shadow: 4px 4px 3px #888888;
     }
+
 }

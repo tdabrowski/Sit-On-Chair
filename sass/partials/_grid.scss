@@ -1,4 +1,5 @@
-/*Grid 12 columns mixed sized with and without gutters*/
+/*GRID FOR 12 COLUMNS MIXED SIZED WITH AND WITHOUT GUTTERS FOR THIS SITE PURPOSES.
+CUSTOMIZED SETUP OF SPECIFIC COLUMNS WITH CREATED COLUMN CONSTRUCTOR*/
 .container{
     width:100%;
     max-width:1054px;
@@ -19,7 +20,7 @@
         @include colConstructor(smx,12,$columnSize,0,0);
 
         /*Tablet settings*/
-        @media screen and (min-width: 704px){
+        @include GridTablet{
             /*col-mdx-2  gutters = 0px;*/
             @include colConstructor(mdx,2,$columnSize,0,0);
             /*col-mdx-4  gutters = 0px;*/
@@ -35,7 +36,7 @@
         }
 
         /*Laptop and higher settings*/
-        @media screen and (min-width: 900px){
+        @include GridLaptop{
             /*col-lgx-4  gutters = 0px;*/
             @include colConstructor(lgx,4,$columnSize,0,0);
             /*col-lglp-4  gutters left,right = 15px;*/
@@ -48,4 +49,18 @@
             @include colConstructor(lgp,8,$columnSize,30px,0);
         }
     }
+}
+
+/*Positioning settings*/
+.flexLeft {
+    @extend %flexRowStart;
+}
+.flexRight{
+    @extend %flexRowEnd;
+}
+.flexSpaceBetween{
+    @extend %flexRowSpace;
+}
+.flexContent {
+    @extend %flexContent;
 }
