@@ -20,7 +20,8 @@
     width: 2.1875rem;
     height: 0.3125rem;
     background-color: map-get($HeaderSectionColors,contentMain);
-    margin: 0.375rem 0;
+    margin: 0.375rem;
+    border-radius:0.3125rem;
 }
 
 
@@ -53,24 +54,32 @@
 /*SUBNAVIGATION*/
 .head__subnav {
     position: absolute;
-    background-color: map-get($HeaderSectionColors,backgroundSubnav);
-    width: 7.5rem;
+    background-color: map-get($HeaderSectionColors,backgroundSubMob);
     height: 6.25rem;
     display: none; //hidden by default
     top: 130%;
-    left: 30%;
-    @media (max-width: 703px){
-        z-index: 1;
+    z-index: 1;
+    left:0;
+    width:100vw;
+    @include GridTablet{    //RWD
+        z-index: auto;
+        left: 30%;
+        width: 7.5rem;
+        background-color: map-get($HeaderSectionColors,backgroundSubnav);
     }
     &::after {
         content: '';
         position: absolute;
         top: -24%;
-        left:33%;
+        left:9%;
         border-top: 1rem solid rgba(255,255,255, 0);
         border-left: 1rem solid rgba(255,255,255, 0);
-        border-bottom: 1rem solid black;
+        border-bottom: 1rem solid map-get($HeaderSectionColors,backgroundSubMob);
         border-right: 1rem solid rgba(255,255,255, 0);
+        @include GridTablet{   //RWD
+            left:33%;
+            border-bottom: 1rem solid black;
+        }
     }
     .head__subnav__li {
         padding: 0.5rem 0 0.5rem 1rem;

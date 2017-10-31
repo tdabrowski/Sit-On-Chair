@@ -68,10 +68,10 @@
     object-fit: none;
     height: 84%;
     @include animate(showIMG,2.5s,1,ease-out);  //animate image
-    @include mobileMedium{
+    @include mobileMedium{ //RWD
         margin-top: 3.125rem;
     }
-    @include laptop{
+    @include laptop{    //RWD
         object-fit: cover;
     }
 }
@@ -86,71 +86,73 @@
 /*HEADER*/
 .sect1__h1{
     font-size: map-get($sliderContentFontSize,mobileHeader);
-    @include animate(showContent,1s,1,steps(60));
-    @include tablet{
+    @include animate(showContent,1s,1,steps(60));  //Animation for text header
+    @include tablet{    //RWD
         font-size: map-get($sliderContentFontSize,tabletHeader);
     }
-    @include GridLaptop{
+    @include GridLaptop{    //RWD
         font-size: map-get($sliderContentFontSize,laptopHeader);
         margin-top:0.625rem;
     }
     display: inline-block;
     text-align: center;
     .sect1__strong{
-        color:$secondColor;
+        color:map-get($Section1Colors,textSecond);
     }
 }
 /*PARAGRAPH*/
 .sect1__p1 {
     font-size:map-get($sliderContentFontSize,mobileParagraph);
-    @include animate(showHidden,2s,1,ease-in-out);
+    @include animate(showHidden,2s,1,ease-in-out);  //Text animation
     line-height: 21px;
-    @media (min-width:801px) and (max-width: 900px) {
+
+    @include tablet{
         font-size: map-get($sliderContentFontSize,tabletParagraph);
         line-height: 21px;
     }
-    @media (min-width:901px) {
+    @include GridLaptop{
         font-size: map-get($sliderContentFontSize,laptopParagraph);
         line-height: 23px;
     }
     text-align: center;
-    margin-top: 18px;
-    padding:0 40px 0 40px;
+    margin-top: 1.125rem;
+    padding:0 2.5rem 0 2.5rem;
     display: inline-block;
-    color: grey;                //tu skonczylem stylowanie
+    color: map-get($Section1Colors,textParagraph);
 }
 
-//Button in slide
+/*BUTTON IN SLIDE*/
 .sect1__btn3 {
     display:inline-block;
-    background-color: $secondColor;
-    color: $firstColor;
+    background-color: map-get($buttonsColors,button1Background);//$secondColor;
+    color: map-get($buttonsColors,button1Text);//$firstColor;
     text-align: center;
     text-decoration: none;
     line-height: 21px;
     @include animate(showHidden,2s,1,ease-in-out);
     font-size: map-get($sliderContentFontSize,mobileButton3);
-    @media (min-width:801px) and (max-width: 900px) {
+    //@media (min-width:801px) and (max-width: 900px) {
+    @include tablet{
         font-size: map-get($sliderContentFontSize,tabletButton3);
-        line-height: 24px;
-        padding: 14px 30px 9px 48px;
+        line-height: 1.5rem;
+        padding: 0.875rem 1.875rem 0.5625rem 3rem;
     }
-    @media (min-width:901px) {
+    @include GridLaptop {
         font-size: map-get($sliderContentFontSize,laptopButton3);
-        line-height: 29px;
-        margin:35px 0 20px 0;
-        padding: 14px 30px 9px 48px;
+        line-height: 1.8125rem;
+        margin:1.25rem 0 1.25rem 0;
+        padding: 0.875rem 1.875rem 0.5625rem 3rem;
     }
-    border-radius: 9px;
-    margin:20px 0 20px 0;
-    padding: 14px 48px 9px 48px;
+    border-radius: 0.5625rem;
+    margin:1.25rem 0 1.25rem 0;
+    padding: 0.875rem 3rem 0.5625rem 3rem;
     &:hover {
         background-color: rgba(36,186,159,0.5);
-        color:$firstColor;
+        color:map-get($Section1Colors,buttonHoverBac);
         transition: 0.5s background-color;
     }
     &:active {
-        box-shadow: 4px 4px 3px #888888;
+        box-shadow: 0.25rem 0.25rem 0.1875rem #888888;
     }
 
 }

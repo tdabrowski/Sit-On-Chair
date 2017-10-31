@@ -8,6 +8,14 @@ $SectionsBackgroundColors:(
     footer: white
 );
 
+//BUTTONS COLORS
+$buttonsColors:(
+    button1Background:#24ba9f,   //background color
+    button1Text:white,            //text color
+    buttonHoverBac:white           //background oon hover
+
+);
+
 
 //HEADER SPECIFIC SECTION COLORS
 $HeaderSectionColors:(
@@ -16,7 +24,8 @@ $HeaderSectionColors:(
     contentMain:white, //burger background color
     mainNav:white,     //main navigation text color
     hoverNav:#c2c2c2,  //main navigation text on hover color
-    backgroundSubnav:black  //background color subnavigation
+    backgroundSubnav:black,  //background color subnavigation
+    backgroundSubMob:#24ba9f //background color subnavigation for mobiles
 );
 
 
@@ -25,8 +34,14 @@ $Section1Colors:(
     textMain:white,    //main text color
     textSecond:#24ba9f, //second text color
     hoverArrow:#c2c2c2,  //main slider buttons on hover color
+    textParagraph: grey //text p in slider
 );
 
+
+//SECTION2 SPECIFIC SECTION COLORS
+$Section2Colors:(
+    underlineHeader:#24ba9f
+);
 
 
 //GLOBAL TEXT COLORS
