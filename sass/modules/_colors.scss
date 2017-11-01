@@ -40,7 +40,11 @@ $Section1Colors:(
 
 //SECTION2 SPECIFIC SECTION COLORS
 $Section2Colors:(
-    underlineHeader:#24ba9f
+    backgroundImgHeader: rgba(255, 255, 255, 0.4),
+    underlineImgHeader:#24ba9f,
+    contentBoxBorder: grey,
+    contentBoxBorderOpacity: rgba(0,0,0,0.2),
+    contentFontColorOpacity: rgba(0,0,0,0.5)
 );
 
 

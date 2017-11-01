@@ -12,9 +12,14 @@
     }
 }
 
+@mixin GridDesktop{ //1024px
+    @media screen and (min-width: #{map-get($GridBreakpoints,desktop)}){
+        @content;
+    }
+}
 
 //----------------------------------------
-//MIXINS FOR SLIDER
+//MIXINS FOR SLIDER AND OTHER SPECIFIC SETUPS
 //Media query for medium mobiles 600px
 @mixin mobileMedium{
     @media screen and (min-width: #{map-get($RWDbreakpoints,MediumMobile)}){

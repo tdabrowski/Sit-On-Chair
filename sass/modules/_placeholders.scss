@@ -57,6 +57,24 @@
 }
 
 
+//----------------------------------------------------------
+//SECTION 2
+//IMG and Conent Box header
+%imgHeader{
+    position: absolute;
+    background-color: map-get($Section2Colors,backgroundImgHeader);//rgba(255, 255, 255, 0.4);
+    width: 100%;
+    hr {
+        border: 0.25rem solid map-get($Section2Colors,underlineImgHeader);
+        max-width: 8.875rem;
+        margin-left:0.625rem;
+    }
+    span {
+        display: block;
+        margin: 0.75rem 0.0625rem 0.9375rem 0.875rem;
+    }
+}
+
 
 //----------------------------------------------------------
 //SECTION 3,4

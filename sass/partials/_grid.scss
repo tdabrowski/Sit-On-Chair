@@ -39,12 +39,12 @@ CUSTOMIZED SETUP OF SPECIFIC COLUMNS WITH CREATED COLUMN CONSTRUCTOR*/
         @include GridLaptop{
             /*col-lgx-4  gutters = 0px;*/
             @include colConstructor(lgx,4,$columnSize,0,0);
-            /*col-lglp-4  gutters left,right = 15px;*/
-            @include colConstructor(lglp,4,$columnSize,15px,15px);
-            /*col-lgl-4  gutters left = 30px;*/
-            @include colConstructor(lgl,4,$columnSize,0,30px);
-            /*col-lgp-4  gutters right = 30px;*/
-            @include colConstructor(lgp,4,$columnSize,30px,0);
+            /*col-lglp-4  gutters left,right = 10px;*/
+            @include colConstructor(lglp,4,$columnSize,10px,10px);
+            /*col-lgl-4  gutters left = 20px;*/
+            @include colConstructor(lgl,4,$columnSize,0,20px);
+            /*col-lgp-4  gutters right = 20px;*/
+            @include colConstructor(lgp,4,$columnSize,20px,0);
             /*col-lgp-8  gutters right = 30px;*/
             @include colConstructor(lgp,8,$columnSize,30px,0);
         }
