@@ -22,8 +22,6 @@ $sevenColor: black; //placeholders font color section 4 Form
 
 //BUTTONS GLOBAL COLORS
 $buttonsColors:(
-    //button1Background:#24ba9f,   //background color
-    //button1Text:white,            //text color
     background1:#24ba9f,
     background2:white,
     text1:white,
@@ -66,7 +64,6 @@ $Section2Colors:(
 
 
 //SECTION3 SPECIFIC SECTION COLORS
-//BOX CONTAINER COLORS
 $Section3Colors:(
     backgroundColor1:white,
     backgroundColor2:#24ba9f,
@@ -80,13 +77,13 @@ $Section3Colors:(
     contentColor6:#c2c2c2
 );
 
-//Colors for box line content background
-/*$boxContentBacColors:(
-    one: #f1f1f1,
-    two: #e4e4e4,
-    three: white,
-    four:#a7a7a7,
-    five:#24ba9f,
-    boxFont1:white,
-    boxFont2:#24ba9f
-);*/
+
+//SECTION4 SPECIFIC SECTION COLORS
+$Section4Colors:(
+    inputText: black,
+    inputBorder:#24ba9f,
+    placeholderColor: #c2c2c2,
+    checkboxBorder:#24ba9f,
+    checkboxBackg:white,
+    checkboxLabelText:#c2c2c2
+);

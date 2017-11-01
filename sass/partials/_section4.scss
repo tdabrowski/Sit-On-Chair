@@ -5,7 +5,6 @@
 .sect4__header{
     @extend %h2Setup;
 }
-
 .sect4__header__hr {
     @extend %hrSetup;
 }
@@ -13,20 +12,20 @@
 
 /*FORM TEXT INPUTS*/
 .sect4__input__container {
-    margin-top:25px;
+    margin-top:1.5625rem;
     .sect4__input {
         width:100%;
-        max-width: 630px;
+        max-width: 39.375rem;
         font-family: 'Raleway', sans-serif;
-        color:$sevenColor;
-        border:1px solid $secondColor;
-        font-size: $formInputFont;
-        padding: 18px 0;
-        text-indent: 10px;
+        color:map-get($Section4Colors,inputText);
+        border:0.0625rem solid map-get($Section4Colors,inputBorder);
+        font-size: map-get($Section4FontsSetup,formInputFont);
+        padding: 1.125rem 0;
+        text-indent: 0.625rem;
         &::placeholder {
-            color: $fourColor;
-            font-size: $formInputFont;
-            text-indent: 10px;
+            color: map-get($Section4Colors,placeholderColor);
+            font-size: map-get($Section4FontsSetup,formInputFont);
+            text-indent: 0.625rem;
         }
     }
     .text {
@@ -38,103 +37,72 @@
 /*FORM IMAGE*/
 .sect4__form__img{
     display:none;
-    @media screen and (min-width: 900px){
+    @include GridLaptop{
         display:inline-block;
         @include animate(showIMG,2.5s,1,ease-out);  //animate image
-        margin:0 20px;
+        margin:0 1.25rem;
     }
 }
 
 
 /*CHECKBOX*/
 .sect4__checkbox__container{
-    margin-top: 40px;
+    margin-top: 2.5rem;
     &:after, &:before{
         clear:both;
         display:block;
     }
     .sect4__acceptImg{
         display:inline-block;
-        //position: relative;
         float:left;
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-        border:1px solid $secondColor;
+        width: 3.125rem;
+        height: 3.125rem;
+        margin-right: 0.625rem;
+        border:0.0625rem solid map-get($Section4Colors,checkboxBorder);
         cursor:pointer;
         .sect4__checkbox{
             position: relative;
-            background-color: white;
-            width:48px;
-            height: 48px;
-            &:checked:after{
+            @extend %checkbox;
+            &:checked:after, &:not(:checked):before{
                 content:'';
                 position: absolute;
+                @extend %checkbox;
                 top:0;
                 left:0;
-                width:48px;
-                height:48px;
-                background-color: white;
+            }
+            &:checked:after {
                 background-image: url(../images/form_ok.jpg);
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: contain;
             }
-            &:not(:checked):before{
-                content:'';
-                position: absolute;
-                top:0;
-                left:0;
-                width:48px;
-                height:48px;
-                background-color: white;
-            }
         }
     }
     .sect4__checkbox__label{
-        font-size: 20px;
-        color:$fourColor;
+        font-size: 1.25rem;
+        color:map-get($Section4Colors,checkboxLabelText);
         text-align: left;
     }
 }
 
 
-
-
-
 /*FORM BUTTON*/
 .sect4__submit {
-    display: inline-block;
+    @extend %Button;
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
-    text-align: center;
-    color:$firstColor;
-    background-color: $secondColor;
-    padding: 15px 40px;
-    border-radius: 10px;
-    margin:15px 0 15px 15px;
-    @media screen and (min-width: 704px){
-        padding: 15px 80px;
-        border-radius: 10px;
-        margin:22px 0 10px 0;
-        font-size: 30px;
+    padding: 0.9375rem 2.5rem;
+    border-radius: 0.625rem;
+    margin:0.9375rem 0 0.9375rem 0.9375rem;
+    @include GridTablet{
+        padding: 0.9375rem 5rem;
+        margin:1.375rem 0 0.625rem 0;
+        font-size: 1.875rem;
     }
     @include GridDesktop{
-        padding: 15px 110px;
-        border-radius: 10px;
-        margin:35px 0 10px 0;
-        font-size: 30px;
-    }
-
-    border: none;
-    outline: none;
-    &:hover {
-        background-color: rgba(36,186,159,0.5);
-        color:$firstColor;
-        transition: 0.5s background-color;
-    }
-    &:active {
-        box-shadow: 4px 4px 3px #888888;
+        padding: 0.9375rem 6.875rem;
+        margin:2.1875rem 0 0.625rem 0;
+        font-size: 1.875rem;
     }
 }

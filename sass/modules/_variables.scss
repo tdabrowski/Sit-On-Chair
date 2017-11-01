@@ -53,13 +53,11 @@ $sliderContentFontSize: (
 );
 
 
-//FONTS - SECTION 3 BOX
-//CIRCLE-IN
- $circleInFont: 44px;
- $circleInSupFont:15px;
- $boxContentFont:24px;
- $boxButtonFont:16px;
+//FONTS - SECTION 3,4 HEADER
+$section34HeaderFont: 23px;
 
+
+//FONTS - SECTION 3 BOX
 $Section3FontSetup:(
     boxContentFont:24px,
     boxButtonFont:16px,
@@ -68,24 +66,13 @@ $Section3FontSetup:(
 );
 
 
-
-
-//FOOTER SPECIFIC FONT SETUP
-$FooterFontSizes:(
-    mainFont:1.125rem
-);
-
-
-
-//FONTS - SECTION 3,4 HEADER
-$section34HeaderFont: 23px;
-
-//FONTS - SECTION 3 BOX
-//CIRCLE-IN
- $circleInFont: 44px;
- $circleInSupFont:15px;
- $boxContentFont:24px;
- $boxButtonFont:16px;
+ //FONTS - SECTION 4 FORM
+ $formInputFont: 32px; //text in placeholder
+ $formLineHigh:40px;
+ $Section4FontsSetup:(
+    formInputFont: 32px,
+    formLineHigh:40px
+ );
 
 
 //SECTION CALCULATOR FONTS
@@ -94,6 +81,7 @@ $sectionCalcFontSize:(
 );
 
 
- //FONTS FORM
- $formInputFont: 32px; //text in placeholder
- $formLineHigh:40px;
+//FOOTER SPECIFIC FONT SETUP
+$FooterFontSizes:(
+    mainFont:1.125rem
+);
