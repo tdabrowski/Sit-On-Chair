@@ -1,14 +1,9 @@
 /*SECTION 3 ELEMENTS SETTINGS----------
 -------------------------------------*/
-/*GLOBAL CLASSES*/
-
-
-
 /*SECTION HEADER SETTINGS*/
 .sect3__header{
     @extend %h2Setup;
 }
-
 .sect3__header__hr {
     @extend %hrSetup;
 }
@@ -17,85 +12,70 @@
 /*PRICE BOX CONTAINER*/
 .priceBox__containter{
     width:100%;
-    height:570px;
+    height:35.625rem;
     @include animate(showHidden,2.5s,1,ease-out);  //animate image
     @extend %flexColCenter;
     justify-content: flex-end;
     padding:0;
     margin:0;
-    /*&.width-conversion{
-        width:90%;
-    }*/
     .priceBox { //main box settings
         @extend %priceBoxContainer;
-        &:before{
+        &:before{ //big cicrle outside box
             @extend %smallCircleBig;
         }
-        &:after{
+        &:after{ //small circle inside big circle outside box
             @extend %smallCircleSmall;
         }
     }
     .priceBoxFirstColor { //white green box
-        background-color: $secondColor;
-        border: 2px solid $secondColor;
-        &:before{
-            background-color: $secondColor;
-            border: 2px solid $secondColor;
+        &, &:before{
+            @include boxColors(map-get($Section3Colors,backgroundColor2),map-get($Section3Colors,backgroundColor2));
         }
         &:after{
-            background-color: $firstColor;
-            border: 2px solid $firstColor;
+            @include boxColors(map-get($Section3Colors,backgroundColor1),map-get($Section3Colors,backgroundColor1));
         }
     }
     .priceBoxSecondColor { //white grey box
-        background-color: $fiveColor;
-        border: 2px solid $fourColor;
-        &:before{
-            background-color: $fiveColor;
-            border: 2px solid $fourColor;
+        &, &:before{ //backgroud and border box colors and big circle colors outside box
+            @include boxColors(map-get($Section3Colors,backgroundColor4),map-get($Section3Colors,backgroundColor3));
         }
-        &:after{
-            background-color: $fourColor;
-            border: 2px solid $fourColor;
+        &:after{ //small circle colors outside box
+            @include boxColors(map-get($Section3Colors,backgroundColor3),map-get($Section3Colors,backgroundColor3));
         }
     }
-
 }
 
 
 /*PRICE BOX CONTENT SETTINGS*/
+//Headers text and background settings
 .priceBox {
-    .t0 {
-        font-size: $boxContentFont;
+    .t0, .t1, .t2, .t3 {
+        font-size: map-get($Section3FontSetup,boxContentFont);
         font-weight: 400;
-        margin-top:30px;
     }
     .t0FirstColor{
-        color:$firstColor;
+        color:map-get($Section3Colors,contentColor3);
     }
     .t0SecondColor{
-        color:$secondColor;
+        color:map-get($Section3Colors,contentColor5);
     }
-    .t1 {
-        margin-top:30px;
+    .t0, .t1 {
+        margin-top:1.875rem;
     }
     .t1, .t2, .t3 {
-        color:$sixColor;
-        display:block;
+        color:map-get($Section3Colors,contentColor4);
         width:99.8%;
-        font-size: $boxContentFont;
-        padding: 8px;
+        padding: 0.5rem;
         text-align: center;
-        font-weight: 400;
     }
     .colorBac1 {
-        background-color: map-get($boxContentBacColors,one);
+        background-color: map-get($Section3Colors,contentColor1);
     }
     .colorBac2 {
-        background-color: map-get($boxContentBacColors,two);
+        background-color: map-get($Section3Colors,contentColor2);
     }
     .colorBac3 {
-        background-color: map-get($boxContentBacColors,three);
+        background-color: map-get($Section3Colors,contentColor3);
     }
 }
 
@@ -103,17 +83,17 @@
 /*BIG CIRCLE INSIDE CONTAINER*/
 .priceBox__circleIn{
     @extend %flexColCenter;
-    width: 131px;
-    height: 131px;
-    margin:30px 0 0 0;
+    width: 8.1875rem;
+    height: 8.1875rem;
+    margin:1.875rem 0 0 0;
     border-radius: 100%;
-    color: $secondColor;
-    background-color: $firstColor;
-    border: 2px solid $firstColor;
+    color: map-get($Section3Colors,contentColor5);
+    background-color:map-get($Section3Colors,contentColor3);
+    border: 0.125rem solid map-get($Section3Colors,contentColor3);
     .num {
-        font-size: $circleInFont;
+        font-size: map-get($Section3FontSetup,circleInFont);
         sup {
-            font-size: $circleInSupFont;
+            font-size: map-get($Section3FontSetup,circleInSupFont);
             vertical-align: super;
         }
     }
@@ -124,46 +104,33 @@
 }
 //Colors settings for big circle inside container
 .priceBox__circleInFirstColor{  //grey-white
-    border-color: $fourColor;
-    color:$fourColor;
+    @include circleInColor(map-get($Section3Colors,backgroundColor3),map-get($Section3Colors,contentColor6));
 }
 .priceBox__circleInSecondColor{ //green-white
-    border-color: $secondColor;
-    color:$secondColor;
+    @include circleInColor(map-get($Section3Colors,backgroundColor2),map-get($Section3Colors,contentColor5));
 }
 
 
 /*BUTTON SETTINGS*/
 .pricebtn {
-    display:inline-block;
-    padding: 8px 33px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: $boxButtonFont;
+    @extend %Button;        //Standard button settings from global placeholder
+    padding: 0.5rem 2.0625rem;
+    font-size: map-get($Section3FontSetup,boxButtonFont);
 }
-.pricebtnColor1 { //white button
-    color: $secondColor;
-    background-color:$firstColor;
+.pricebtnColorReverse { //Button color reverse text green background white
+    @include buttonColor(map-get($buttonsColors,text2),map-get($buttonsColors,background2));
     &:hover{
-        color: $firstColor;
-        background-color: $secondColor;
+        @include buttonColor(map-get($buttonsColors,text1),map-get($buttonsColors,background1));
+        border: 0.0625rem solid map-get($buttonsColors,background2);
     }
 }
-.pricebtnColor2 { //green button
-    color: $firstColor;
-    background-color: $secondColor;
-    &:hover{
-        color: $secondColor;
-        background-color:$firstColor;
-    }
-}
-.pricebtnPos1{ //button position
-    margin-top: 109px;
+//Buttons position in box containers
+.pricebtnPos1{
+    margin-top: 6.8125rem;
 }
 .pricebtnPos2{
-    margin-top: 64px;
+    margin-top: 4rem;
 }
 .pricebtnPos3{
-    margin-top: 21px;
+    margin-top: 1.3125rem;
 }

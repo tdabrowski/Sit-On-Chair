@@ -53,6 +53,19 @@ $sliderContentFontSize: (
 );
 
 
+//FONTS - SECTION 3 BOX
+//CIRCLE-IN
+ $circleInFont: 44px;
+ $circleInSupFont:15px;
+ $boxContentFont:24px;
+ $boxButtonFont:16px;
+
+$Section3FontSetup:(
+    boxContentFont:24px,
+    boxButtonFont:16px,
+    circleInFont: 44px,
+    circleInSupFont:15px
+);
 
 
 

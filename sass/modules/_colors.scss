@@ -8,12 +8,29 @@ $SectionsBackgroundColors:(
     footer: white
 );
 
-//BUTTONS COLORS
-$buttonsColors:(
-    button1Background:#24ba9f,   //background color
-    button1Text:white,            //text color
-    buttonHoverBac:white           //background oon hover
 
+//GLOBAL TEXT AND BACKGROUNDS ELEMENTS COLORS
+$firstColor: white;
+$secondColor: #24ba9f; //global green
+$thirdColor: grey;    //global grey for p
+$fourColor: #c2c2c2;  //color for section 3 box container borderColor and form placeholders
+$fiveColor: #f9f9f9; //color for section 3 box container backgroundColor
+$sixColor:#a7a7a7 ; //color for section 3 box content text
+$sevenColor: black; //placeholders font color section 4 Form
+
+
+
+//BUTTONS GLOBAL COLORS
+$buttonsColors:(
+    //button1Background:#24ba9f,   //background color
+    //button1Text:white,            //text color
+    background1:#24ba9f,
+    background2:white,
+    text1:white,
+    text2:#24ba9f,
+    buttonHoverText:white,           //text on hover
+    buttonHoverBack:rgba(36,186,159,0.5), //background on hover
+    buttonShadowColor:#888888
 );
 
 
@@ -48,19 +65,28 @@ $Section2Colors:(
 );
 
 
-//GLOBAL TEXT COLORS
-$firstColor: white;
-$secondColor: #24ba9f; //global green
-$thirdColor: grey;    //global grey for p
-$fourColor: #c2c2c2;  //color for section 3 box container borderColor and form placeholders
-$fiveColor: #f9f9f9; //color for section 3 box container backgroundColor
-$sixColor:#a7a7a7 ; //color for section 3 box content text
-$sevenColor: black; //placeholders font color section 4 Form
-
+//SECTION3 SPECIFIC SECTION COLORS
+//BOX CONTAINER COLORS
+$Section3Colors:(
+    backgroundColor1:white,
+    backgroundColor2:#24ba9f,
+    backgroundColor3:#c2c2c2,
+    backgroundColor4:#f9f9f9,
+    contentColor1:#f1f1f1,
+    contentColor2:#e4e4e4,
+    contentColor3:white,
+    contentColor4:#a7a7a7,
+    contentColor5:#24ba9f,
+    contentColor6:#c2c2c2
+);
 
 //Colors for box line content background
-$boxContentBacColors:(
+/*$boxContentBacColors:(
     one: #f1f1f1,
     two: #e4e4e4,
-    three: white
-);
+    three: white,
+    four:#a7a7a7,
+    five:#24ba9f,
+    boxFont1:white,
+    boxFont2:#24ba9f
+);*/

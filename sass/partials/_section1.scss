@@ -123,15 +123,14 @@
 
 /*BUTTON IN SLIDE*/
 .sect1__btn3 {
-    display:inline-block;
-    background-color: map-get($buttonsColors,button1Background);//$secondColor;
-    color: map-get($buttonsColors,button1Text);//$firstColor;
+    @extend %Button;  //standard settings and hover,active action
     text-align: center;
     text-decoration: none;
     line-height: 21px;
-    @include animate(showHidden,2s,1,ease-in-out);
     font-size: map-get($sliderContentFontSize,mobileButton3);
-    //@media (min-width:801px) and (max-width: 900px) {
+    border-radius: 0.5625rem;
+    margin:1.25rem 0 1.25rem 0;
+    padding: 0.875rem 3rem 0.5625rem 3rem;
     @include tablet{
         font-size: map-get($sliderContentFontSize,tabletButton3);
         line-height: 1.5rem;
@@ -143,16 +142,5 @@
         margin:1.25rem 0 1.25rem 0;
         padding: 0.875rem 1.875rem 0.5625rem 3rem;
     }
-    border-radius: 0.5625rem;
-    margin:1.25rem 0 1.25rem 0;
-    padding: 0.875rem 3rem 0.5625rem 3rem;
-    &:hover {
-        background-color: rgba(36,186,159,0.5);
-        color:map-get($Section1Colors,buttonHoverBac);
-        transition: 0.5s background-color;
-    }
-    &:active {
-        box-shadow: 0.25rem 0.25rem 0.1875rem #888888;
-    }
-
+    @include animate(showHidden,2s,1,ease-in-out);
 }
