@@ -1,7 +1,7 @@
 
 /*TEXT COPYRIGHT*/
 .footer__text{
-    color:$fourColor;
+    color:map-get($FooterColors,textColor);
     display:inline-block;
     padding: 0.75rem 0;
 }
@@ -11,12 +11,12 @@
 .footer__logo {
     display: inline-block;
     padding: 0.75rem 0;
-    color:$fourColor;
-    margin-left: 30px;
+    color:map-get($FooterColors,textColor);
+    margin-left: 1.875rem;
     font-weight: bold;
 }
 .footer__bold {
-    color:#b3b3b3;
+    color:map-get($FooterColors,textBold);
     font-weight: bolder;
 }
 
@@ -27,45 +27,32 @@
 }
 .footer__nav__ul {
     list-style: none;
-    margin-right:10px;
+    margin-right:0.625rem;
     .footer__nav__li {
         display: inline-block;
-        padding: 0.75rem 2px 0.75rem 0;
+        padding: 0.75rem 0.125rem 0.75rem 0;
         .footer__nav__a {
             display: inline-block;
-            width: 35px;
-            height: 35px;
-            &:link,
-            &:visited,
-            &:hover,
-            &:active {
-                @extend %linksDecoration;
-                font-weight: bold;
-                color:black;
+            width: 2.1875rem;
+            height: 2.1875rem;
+            .footer__hideText{
+                display:none;
             }
         }
         .footer__link1{
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            @extend %backgroundLinksStyle;
             background-image: url(../images/flickr.png);
         }
         .footer__link2{
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            @extend %backgroundLinksStyle;
             background-image: url(../images/vimeo.png);
         }
         .footer__link3{
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            @extend %backgroundLinksStyle;
             background-image: url(../images/pinterest.png);
         }
         .footer__link4{
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            @extend %backgroundLinksStyle;
             background-image: url(../images/twitter.png);
         }
     }
