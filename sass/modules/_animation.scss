@@ -1,5 +1,5 @@
 //SECTION1 SLIDER ANIMATIONS
-//SHOW IMG
+//SHOW IMG from small to big and from invisible to visible
 @keyframes showIMG
 {
     0% {
@@ -13,7 +13,7 @@
 }
 
 
-//SHOW CONTENT - from hidden to visible with height - for slider text
+//SHOW CONTENT - from hidden to visible with some height mix - for slider text
 @keyframes showContent
 {
     0% {height:40%;
@@ -24,7 +24,7 @@
     }
 }
 
-//SHOW HIDDEN for slider text
+//SHOW HIDDEN for slider button
 @keyframes showHidden
 {
     0% {

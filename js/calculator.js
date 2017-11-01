@@ -167,38 +167,5 @@ checkboxTransport.addEventListener('click',function(){
 
 
 
-
-
-//erase choices to default
-/*
-//Erase Order field -- clear all choices in form to default
-var eraseOrder = document.getElementById('eraseOrder');
-eraseOrder.addEventListener('click',function(){
-    console.log('hello');
-
-    typeLable.innerText='Wybierz';
-
-    //colorLable.value ='';
-    //factoryLable.value ='';
-    typeSummaryName.innerText ='';
-    //colorSummaryName.value ='';
-    //factorySummaryName.value ='';
-    //transportSummaryName.value = '';
-    typeSummaryPrice.innerText='';
-    //colorSummaryPrice.value='';
-    //factorySummaryPrice.value='';
-    //transportSummaryPrice.value='';
-    summaryCost.innerText= '';
-    totalCost = 0;
-    typeCost = 0;
-    //colorCost = 0;
-    //factoryCost = 0;
-    //transport = 0;
-    clientOrder = [];
-    //checkboxTransport.checked = false;
-});
-*/
-
-
 //end of file
 });

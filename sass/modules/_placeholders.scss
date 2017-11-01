@@ -72,7 +72,7 @@
 //Slider section
 %sliderContainerSize {
     width:100%;
-    min-height: 245px;
+    min-height: 15.3125rem;
 }
 
 
@@ -81,7 +81,7 @@
 //IMG and Conent Box header
 %imgHeader{
     position: absolute;
-    background-color: map-get($Section2Colors,backgroundImgHeader);//rgba(255, 255, 255, 0.4);
+    background-color: map-get($Section2Colors,backgroundImgHeader);
     width: 100%;
     hr {
         border: 0.25rem solid map-get($Section2Colors,underlineImgHeader);
@@ -99,22 +99,21 @@
 //SECTION 3,4
 //Header settings
 %hrSetup {
-    border: 4px solid $secondColor;
-    max-width: 320px;
-    margin:5px 0 0 0;
+    border: 0.25rem solid map-get($Section3Colors,backgroundColor2);
+    max-width: 20rem;
+    margin:0.3125rem 0 0 0;
 }
 %h2Setup{
-    font-size: $section34HeaderFont;
+    font-size: map-get($Section3FontSetup,headerFontSize);
     font-weight: 400;
-    color:$thirdColor;
-    margin:40px 0 0 0;
+    color:map-get($Section3Colors,contentColor7);
+    margin:2.5rem 0 0 0;
 }
 
 //Price box container settings
 %priceBoxContainer{
     width:100%;
-    //max-width:326px;  //dodałem maksymalna dopuszczalna szeorokosc 30.10.
-    height:500px;
+    height:31.25rem;
     position:relative;
     @extend %flexColCenter;
     justify-content: flex-start;
@@ -124,24 +123,24 @@
     content: '';
     position: absolute;
     border-radius: 100%;
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     top: -7.5%;
 }
 %smallCircleSmall {
     content: '';
     position: absolute;
     border-radius: 100%;
-    width: 28px;
-    height: 28px;
+    width: 1.75rem;
+    height: 1.75rem;
     top:-4.25%;
 }
 
 //Price box content main header
 %boxHeader{
-    font-size: 23px;
+    font-size: 1.4375rem;
     font-weight: 400;
-    margin-top:30px;
+    margin-top:1.875rem;
 }
 
 

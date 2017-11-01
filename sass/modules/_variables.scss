@@ -17,10 +17,6 @@ $GridBreakpoints:(
 $HeaderFontSizes:(
     mainFont:0.875rem
 );
-//FONTS - HEADER
-//$navFontSize: 0.875rem;
-//$mainHeaderFont:0.875rem;
-//$mainFooterFont: 18px;
 
 
 //----------------------------------------------
@@ -41,43 +37,38 @@ $sliderButtonsFontSize: (
 
 //FONTS - SECTION1 SLIDER CONTENT
 $sliderContentFontSize: (
-    laptopHeader: 40px,
-    tabletHeader: 35px,
-    mobileHeader: 30px,
-    laptopParagraph: 16px,
-    tabletParagraph: 14px,
-    mobileParagraph: 12px,
-    laptopButton3: 24px,
-    tabletButton3: 21px,
-    mobileButton3: 18px
+    laptopHeader: 2.5rem,
+    tabletHeader: 2.1875rem,
+    mobileHeader: 1.875rem,
+    laptopParagraph: 1rem,
+    tabletParagraph: 0.875rem,
+    mobileParagraph: 0.75rem,
+    laptopButton3: 1.5rem,
+    tabletButton3: 1.3125rem,
+    mobileButton3: 1.125rem
 );
-
-
-//FONTS - SECTION 3,4 HEADER
-$section34HeaderFont: 23px;
 
 
 //FONTS - SECTION 3 BOX
 $Section3FontSetup:(
-    boxContentFont:24px,
-    boxButtonFont:16px,
-    circleInFont: 44px,
-    circleInSupFont:15px
+    headerFontSize:1.4375rem,
+    boxContentFont:1.5rem,
+    boxButtonFont:1rem,
+    circleInFont: 2.75rem,
+    circleInSupFont:0.9375rem
 );
 
 
  //FONTS - SECTION 4 FORM
- $formInputFont: 32px; //text in placeholder
- $formLineHigh:40px;
  $Section4FontsSetup:(
-    formInputFont: 32px,
-    formLineHigh:40px
+    formInputFont: 2rem,
+    formLineHigh:2.5rem
  );
 
 
 //SECTION CALCULATOR FONTS
 $sectionCalcFontSize:(
-    header:16px
+    header:1rem
 );
 
 

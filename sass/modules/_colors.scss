@@ -5,11 +5,12 @@ $SectionsBackgroundColors:(
     section2: white,
     section3: #f1f1f1,
     section4: white,
+    sectionCalc: #f9f9f9,
     footer: white
 );
 
 
-//GLOBAL TEXT AND BACKGROUNDS ELEMENTS COLORS
+//GLOBAL TEXT AND BACKGROUNDS ELEMENTS COLORS -- when color is not in table for section
 $firstColor: white;
 $secondColor: #24ba9f; //global green
 $thirdColor: grey;    //global grey for p
@@ -74,7 +75,8 @@ $Section3Colors:(
     contentColor3:white,
     contentColor4:#a7a7a7,
     contentColor5:#24ba9f,
-    contentColor6:#c2c2c2
+    contentColor6:#c2c2c2,
+    contentColor7:grey
 );
 
 

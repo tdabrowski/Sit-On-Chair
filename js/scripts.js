@@ -29,8 +29,7 @@ function menu(moveover,moveout){
 	}
 }
 
-menu('mouseover','mouseout');		//desktop
-menu('touchenter','touchleave');	//mobile
+menu('mouseover','mouseout');
 
 
 //--------------------------------------------------------
@@ -39,12 +38,10 @@ menu('touchenter','touchleave');	//mobile
 var nextButton = document.getElementById('next');
 var previousButton = document.getElementById('previous');
 var slideList = document.querySelectorAll('.sect1__list__item');
-console.log(slideList);
 var index=0;
 
 slideList[0].classList.add('slide__visible');
 nextButton.addEventListener('click',function(){
-	console.log('buton next');
 	slideList[index].classList.remove('slide__visible');
 	slideList[index].classList.add('slide__hidden');
 	if(index===slideList.length-1){
@@ -58,7 +55,6 @@ nextButton.addEventListener('click',function(){
 });
 
 previousButton.addEventListener('click',function(){
-	console.log('button previous');
 	slideList[index].classList.remove('slide__visible');
 	slideList[index].classList.add('slide__hidden');
 	if(index>0){
@@ -72,10 +68,14 @@ previousButton.addEventListener('click',function(){
 });
 
 
-//-------------znikanie naglowkow ze zdjec-------//
+//-------------Disapiring headers on images in section2-------//
 var elements = document.querySelectorAll('.sect2__img__head');
 var boxes = document.querySelectorAll('.sect2__img__box');
-
+/**
+* Function responsible for handling events with header disapiring on images in section2
+* @param {string} moveover
+* @param {string} moveout
+*/
 function hidden(moveover,moveout){
 	for(var i=0;i<boxes.length;i++){
 		boxes[i].addEventListener(moveover,function(){
@@ -88,60 +88,20 @@ function hidden(moveover,moveout){
 	}
 }
 hidden('mouseover','mouseout');
-hidden('touchenter','touchleave');
 
 
 
 
 //-----------------BURGER----------------------//
-//MINI BUTTON W GŁÓWNYM MENU DLA RWD ----------
+//Navigation for RWD --------------------------
 //---------------------------------------------
 var lista = document.getElementById('nav');
 var button = document.getElementById('burger');
-var	mobile = window.matchMedia("screen and (max-width:703px)"); //bylo 703
-
-
-//1. Sprawdzam warunki poczatkowe po otwarciu okna przegladarki
-if(window.innerWidth>=703){ //bylo 500
-	lista.style.display = 'block';
-	button.style.display = "none";
-	changeView('inline-block','flex-end');  //new setup
-}
-else{
-	lista.style.display = 'none';
-	button.style.display = "inline-block";
-	changeView('block','flex-start');   //new setup
-}
-
-//2.ustawiam obsługe buttona i event klikania - pokaz liste-schowaj liste
-//button caly czas jest w DOM nawet gdy jest schowany-none !
-button.addEventListener('click',function(){
-	if(lista.style.display==='block'){
-		lista.style.display='none';
-	}
-	else{
-		lista.style.display='block';
-	}
-});
-
-
-//3.Sprawdzam czy szerokosc okna sie nie zmieniła (event dla mobile)
-mobile.addListener(	function(mobile)	{
-	if(mobile.matches){  //ekran jest mniejszy niz 420px
-		lista.style.display = 'none';
-		button.style.display = "inline-block";
-		changeView('block','flex-start');   //new setup
-	}
-	else { //ekran jest wiekszy niz 420px
-		lista.style.display = "block";
-		button.style.display = "none";
-		changeView('inline-block','flex-end');  //new setup
-	}
-});
-
+var	mobile = window.matchMedia("screen and (max-width:703px)");
 /**
-*set -- string value (block or inline-block)
-*funkcja ustawia sposob wyswietlania glownej nawigacji w zaleznosci od rozdzielczosci
+* Function setups navigation view for start screen resolution
+* @param {string} set
+* @param {string} flex
 */
 function changeView(set,flex){
 	for(var i=0; i<navList.length; i++){
@@ -152,5 +112,46 @@ function changeView(set,flex){
 	}
 }
 
+//1. Checking start setup for the screen when browser starts
+if(window.innerWidth>=703){
+	lista.style.display = 'block';
+	button.style.display = "none";
+	changeView('inline-block','flex-end');  //new setup
+}
+else{
+	lista.style.display = 'none';
+	button.style.display = "inline-block";
+	changeView('block','flex-start');   //new setup
+}
 
+
+//2.Set button event handler when click on it - show/hide list
+button.addEventListener('click',function(){
+	if(lista.style.display==='block'){
+		lista.style.display='none';
+	}
+	else{
+		lista.style.display='block';
+	}
+});
+
+
+//3.Checkin if screen resolution was changed
+mobile.addListener(	function(mobile)	{
+	if(mobile.matches){  //screen resolution is smaller than 703px
+		lista.style.display = 'none';
+		button.style.display = "inline-block";
+		changeView('block','flex-start');   //new setup
+	}
+	else { //screen resolution is higher than 703px
+		lista.style.display = "block";
+		button.style.display = "none";
+		changeView('inline-block','flex-end');  //new setup
+	}
+});
+
+
+
+
+//end of file
 });
