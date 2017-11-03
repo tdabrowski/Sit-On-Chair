@@ -42,9 +42,9 @@ var transport = 0;
 //totalCost = typeCost + colorCost + factoryCost + transport;
 
 //Tables with prices
-var typePrice = [{name:'Clair', price:200},
-                  {name:'Margarita', price:220},
-                  {name:'Selena', price:240}];
+var typePrice = [{name:'Chair Clair', price:200},
+                  {name:'Chair Margarita', price:220},
+                  {name:'Chair Selena', price:240}];
 
 var colorPrice = [{name:'Czerwony',price:80},
                   {name:'Czarny',price:90},
@@ -57,31 +57,21 @@ var factoryPrice = [{name:'Tkanina',price:80},
 var clientOrder = [];
 
 
-//function display list content
-function display(listId){
-    if(listId.style.display === 'block'){
-        listId.style.display = 'none';
-    }
-    else{
-        listId.style.display = 'block';
-    }
-}
-
 //Event click - arrow button for list chairType (drop down menu show on off)
 chairTypeButton.addEventListener('click',function(){
-    display(chairType);
+    chairType.style.display = "block";
 });
 
 
 //Event click - arrow button for list chairColor (drop down menu show on off)
 chairColorButton.addEventListener('click',function(){
-    display(chairColor);
+    chairColor.style.display = "block";
 });
 
 
 //Event click - arrow button for list chairFactory (drop down menu show on off)
 chairFactoryButton.addEventListener('click',function(){
-    display(chairFactory);
+    chairFactory.style.display = "block";
 });
 
 
@@ -93,9 +83,9 @@ chairFactoryButton.addEventListener('click',function(){
 for(var i=0; i<chairTypeElements.length; i++){
     chairTypeElements[i].addEventListener('click',function(){
         for(var j=0; j<typePrice.length; j++){
-            if(this.dataset.typeId === typePrice[j].name){
+            if(this.dataset.id === typePrice[j].name){
                 typeCost = (typePrice[j].price);
-                clientOrder[0] = 'Chair ' + typePrice[j].name;
+                clientOrder[0] = typePrice[j].name;
                 typeLable.innerText = clientOrder[0];
                 typeLable.style.color = '#24ba9f';
                 typeSummaryName.innerText = clientOrder[0];
@@ -104,14 +94,16 @@ for(var i=0; i<chairTypeElements.length; i++){
                 summaryCost.innerText = totalCost;
             }
         }
+        chairType.style.display = "none";
     });
 }
+
 
 //Select color
 for(var i=0; i<chairColorElements.length; i++){
     chairColorElements[i].addEventListener('click',function(){
         for(var j=0; j<colorPrice.length; j++){
-            if(this.dataset.colorId === colorPrice[j].name){
+            if(this.dataset.id === colorPrice[j].name){
                 colorCost = (colorPrice[j].price);
                 clientOrder[1] = colorPrice[j].name;
                 colorLable.innerText = clientOrder[1];
@@ -122,14 +114,18 @@ for(var i=0; i<chairColorElements.length; i++){
                 summaryCost.innerText = totalCost;
             }
         }
+        chairColor.style.display = "none";
     });
 }
+
+
+
 
 //Select factory
 for(var i=0; i<chairFactoryElements.length; i++){
     chairFactoryElements[i].addEventListener('click',function(){
         for(var j=0; j<factoryPrice.length; j++){
-            if(this.dataset.factoryId === factoryPrice[j].name){
+            if(this.dataset.id === factoryPrice[j].name){
                 factoryCost = (factoryPrice[j].price);
                 clientOrder[2] = factoryPrice[j].name;
                 factoryLable.innerText = clientOrder[2];
@@ -140,8 +136,12 @@ for(var i=0; i<chairFactoryElements.length; i++){
                 summaryCost.innerText = totalCost;
             }
         }
+        chairFactory.style.display = "none";
     });
 }
+
+
+
 
 
 //Checking if tranport is ordered
