@@ -2,25 +2,28 @@
 document.addEventListener('DOMContentLoaded', function() {
 	console.log("DOM fully loaded and parsed!");
 
-/*-------------------------------
---------------Main menu----------*/
-var navList = document.querySelectorAll('.head__nav__li');
+//--------------------------------------------------------//
+//--------------Manage menu-------------------------------//
+//--------------------------------------------------------//
+
 
 //
 /**
 * Events handler for main navigation menu
-* @param {string} moveover
-* @param {string} moveout
+* @param {string} moveover - event type
+* @param {string} moveout - event type
+* @param {string} className - class name of navigation elements (li elements)
 */
-function menu(moveover,moveout){
-	for(var i=0;i<navList.length;i++){
-		navList[i].addEventListener(moveover,function(){
+function manageMenu(moveover,moveout,className){
+	var navigation = document.querySelectorAll(className);
+	for(var i=0;i<navigation.length;i++){
+		navigation[i].addEventListener(moveover,function(){
 			var subActive = this.lastElementChild;
 			if(subActive.tagName === 'UL'){
 				subActive.style.display = 'block';
 			}
 		});
-		navList[i].addEventListener(moveout,function(){
+		navigation[i].addEventListener(moveout,function(){
 			var subDisabled = this.lastElementChild;
 			if(subDisabled.tagName === 'UL'){
 				subDisabled.style.display = 'none';
@@ -29,54 +32,65 @@ function menu(moveover,moveout){
 	}
 }
 
-menu('mouseover','mouseout');
 
-
-//--------------------------------------------------------
+//--------------------------------------------------------//
 //Slider--------------------------------------------------//
 //--------------------------------------------------------//
-var nextButton = document.getElementById('next');
-var previousButton = document.getElementById('previous');
-var slideList = document.querySelectorAll('.sect1__list__item');
-var index=0;
+/**
+* Infinity Slider manager with two buttons
+* @param {string} nextId - button next Id
+* @param {string} previousId - button previous Id
+* @param {string} slideElements - class name of li elements with slides
+* @param {string} show - class name to show elements
+* @param {string} hide - class name to hide elements
+*/
+function manageSlider(nextId,previousId,slideElements,show,hide){
+	var nextButton = document.getElementById(nextId);
+	var previousButton = document.getElementById(previousId);
+	var slideList = document.querySelectorAll(slideElements);
+	var index=0;
 
-slideList[0].classList.add('slide__visible');
-nextButton.addEventListener('click',function(){
-	slideList[index].classList.remove('slide__visible');
-	slideList[index].classList.add('slide__hidden');
-	if(index===slideList.length-1){
-		index = 0;
-	}
-	else{
-		index++;
-	}
-	slideList[index].classList.remove('slide__hidden');
-	slideList[index].classList.add('slide__visible');
-});
+	slideList[0].classList.add(show);
+	nextButton.addEventListener('click',function(){
+		slideList[index].classList.remove(show);
+		slideList[index].classList.add(hide);
+		if(index===slideList.length-1){
+			index = 0;
+		}
+		else{
+			index++;
+		}
+		slideList[index].classList.remove(hide);
+		slideList[index].classList.add(show);
+	});
 
-previousButton.addEventListener('click',function(){
-	slideList[index].classList.remove('slide__visible');
-	slideList[index].classList.add('slide__hidden');
-	if(index>0){
-		index--;
-	}
-	else{
-		index=slideList.length-1;
-	}
-	slideList[index].classList.remove('slide__hidden');
-	slideList[index].classList.add('slide__visible');
-});
+	previousButton.addEventListener('click',function(){
+		slideList[index].classList.remove(show);
+		slideList[index].classList.add(hide);
+		if(index>0){
+			index--;
+		}
+		else{
+			index=slideList.length-1;
+		}
+		slideList[index].classList.remove(hide);
+		slideList[index].classList.add(show);
+	});
+}
 
 
-//-------------Disapiring headers on images in section2-------//
-var elements = document.querySelectorAll('.sect2__img__head');
-var boxes = document.querySelectorAll('.sect2__img__box');
+//--------------------------------------------------------//
+//-------------Hide Headers-------------------------------//
+//--------------------------------------------------------//
 /**
 * Function responsible for handling events with header disapiring on images in section2
-* @param {string} moveover
-* @param {string} moveout
+* @param {string} moveover - event type
+* @param {string} moveout - event type
+* @param {string} imgBoxes - boxes with images and header on it to hide
 */
-function hidden(moveover,moveout){
+function hiddenHeader(moveover,moveout,imgBoxes){
+	//var elements = document.querySelectorAll('.sect2__img__head');
+	var boxes = document.querySelectorAll(imgBoxes);
 	for(var i=0;i<boxes.length;i++){
 		boxes[i].addEventListener(moveover,function(){
 				this.lastElementChild.style.display = 'none';
@@ -87,71 +101,81 @@ function hidden(moveover,moveout){
 		});
 	}
 }
-hidden('mouseover','mouseout');
-
-
 
 
 //-----------------BURGER----------------------//
-//Navigation for RWD --------------------------
-//---------------------------------------------
-var lista = document.getElementById('nav');
-var button = document.getElementById('burger');
-var	mobile = window.matchMedia("screen and (max-width:703px)");
+//Navigation for RWD --------------------------//
+//---------------------------------------------//
 /**
-* Function setups navigation view for start screen resolution
-* @param {string} set
-* @param {string} flex
+* Set navigation view on main site when changing screen resolution
+* @param {variable} breakpoint - breakpoint resolution settings
 */
-function changeView(set,flex){
-	for(var i=0; i<navList.length; i++){
-		navList[i].style.display = set;
-		var navContainer = document.querySelector('.head__nav');
-		navContainer.style.justifyContent = flex;
-		//console.log(set + i);
+function burger(breakpoint){
+	var lista = document.getElementById('nav');
+	var button = document.getElementById('burger');
+	var mobile = breakpoint;
+
+
+	/**
+	* Function setups navigation view for start screen resolution
+	* @param {string} set
+	* @param {string} flex
+	*/
+	function changeView(set,flex){
+		var navListt = document.querySelectorAll('.head__nav__li');
+		for(var i=0; i<navListt.length; i++){
+			navListt[i].style.display = set;
+			var navContainer = document.querySelector('.head__nav');
+			navContainer.style.justifyContent = flex;
+		}
 	}
-}
-
-//1. Checking start setup for the screen when browser starts
-if(window.innerWidth>=703){
-	lista.style.display = 'block';
-	button.style.display = "none";
-	changeView('inline-block','flex-end');  //new setup
-}
-else{
-	lista.style.display = 'none';
-	button.style.display = "inline-block";
-	changeView('block','flex-start');   //new setup
-}
 
 
-//2.Set button event handler when click on it - show/hide list
-button.addEventListener('click',function(){
-	if(lista.style.display==='block'){
-		lista.style.display='none';
+	//1. Checking start setup for the screen when browser starts
+	if(window.innerWidth>=703){
+		lista.style.display = 'block';
+		button.style.display = "none";
+		changeView('inline-block','flex-end');
 	}
 	else{
-		lista.style.display='block';
-	}
-});
-
-
-//3.Checkin if screen resolution was changed
-mobile.addListener(	function(mobile)	{
-	if(mobile.matches){  //screen resolution is smaller than 703px
 		lista.style.display = 'none';
 		button.style.display = "inline-block";
-		changeView('block','flex-start');   //new setup
+		changeView('block','flex-start');
 	}
-	else { //screen resolution is higher than 703px
-		lista.style.display = "block";
-		button.style.display = "none";
-		changeView('inline-block','flex-end');  //new setup
-	}
-});
 
+	//2.Set button event handler when click on it - show/hide list
+	button.addEventListener('click',function(){
+		if(lista.style.display==='block'){
+			lista.style.display='none';
+		}
+		else{
+			lista.style.display='block';
+		}
+	});
 
+	//3.Checking if screen resolution was changed
+	mobile.addListener(	function(mobile)	{
+		if(mobile.matches){  //screen resolution is smaller than breakpoint
+			lista.style.display = 'none';
+			button.style.display = "inline-block";
+			changeView('block','flex-start');   //new setup
+		}
+		else { //screen resolution is higher than breakpoint
+			lista.style.display = "block";
+			button.style.display = "none";
+			changeView('inline-block','flex-end');  //new setup
+		}
+	});
+}
 
+//Brakpoint settings for burger display
+var	mob = window.matchMedia("screen and (max-width:703px)");
+
+//Start events listening
+manageMenu('mouseover','mouseout','.head__nav__li');
+manageSlider('next','previous','.sect1__list__item','slide__visible','slide__hidden');
+hiddenHeader('mouseover','mouseout','.sect2__img__box');
+burger(mob);
 
 //end of file
 });
