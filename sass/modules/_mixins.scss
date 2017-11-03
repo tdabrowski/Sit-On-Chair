@@ -20,6 +20,13 @@
 
 //----------------------------------------
 //MEDIA QUERY MIXINS FOR SLIDER AND OTHER SPECIFIC SETUPS
+//Media query for small mobiles 500px - main navigation setup
+@mixin mobileSmall{
+    @media screen and (min-width: #{map-get($RWDbreakpoints,smallMobile)}){
+        @content;
+    }
+}
+
 //Media query for medium mobiles 600px
 @mixin mobileMedium{
     @media screen and (min-width: #{map-get($RWDbreakpoints,MediumMobile)}){

@@ -16,17 +16,17 @@ CUSTOMIZED SETUP OF SPECIFIC COLUMNS WITH CREATED COLUMN CONSTRUCTOR*/
         @include colConstructor(smx,1,$columnSize,0,0);
         /*col-smx-10  gutters = 0px;*/
         @include colConstructor(smx,10,$columnSize,0,0);
-        /*col-smx-12  gutters = 0px;*/
-        @include colConstructor(smx,12,$columnSize,0,0);
+        /*col-smx-12  gutters left,right = 5px*/
+        @include colConstructor(smx,12,$columnSize,5px,5px);
 
         /*Tablet settings*/
         @include GridTablet{
-            /*col-mdx-2  gutters = 0px;*/
-            @include colConstructor(mdx,2,$columnSize,0,0);
+            /*col-mdx-2  gutters right = 5px;*/
+            @include colConstructor(mdx,2,$columnSize,0px,5px);
             /*col-mdx-4  gutters = 0px;*/
-            @include colConstructor(mdx,4,$columnSize,0,0);
-            /*col-mdx-6  gutters = 0px;*/
-            @include colConstructor(mdx,6,$columnSize,0,0);
+            @include colConstructor(mdx,4,$columnSize,0px,0px);
+            /*col-mdx-6  gutters left,right = 5px;*/
+            @include colConstructor(mdx,6,$columnSize,5px,5px);
             /*col-mdlp-6  gutters left,right = 15px;*/
             @include colConstructor(mdlp,6,$columnSize,15px,15px);
             /*col-mdlp-12  gutters left,right = 15px;*/
@@ -37,8 +37,12 @@ CUSTOMIZED SETUP OF SPECIFIC COLUMNS WITH CREATED COLUMN CONSTRUCTOR*/
 
         /*Laptop and higher settings*/
         @include GridLaptop{
+            /*col-lgx-2  gutters = 0px;*/
+            @include colConstructor(lgx,2,$columnSize,0,0);
             /*col-lgx-4  gutters = 0px;*/
             @include colConstructor(lgx,4,$columnSize,0,0);
+            /*col-lgx-6  gutters = 0px;*/
+            @include colConstructor(lgx,6,$columnSize,0,0);
             /*col-lglp-4  gutters left,right = 10px;*/
             @include colConstructor(lglp,4,$columnSize,10px,10px);
             /*col-lgl-4  gutters left = 20px;*/
