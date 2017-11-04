@@ -65,10 +65,9 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 		slideList[index].classList.add(show);
 	}
 	//Start slide show
-	var slideShow = setInterval(nextSlide,5000);
-
-
 	slideList[0].classList.add(show);
+	var slideShow = setInterval(nextSlide,5000);
+	
 	nextButton.addEventListener('click',function(){
 		clearInterval(slideShow); //turn off automatic slide show
 		nextSlide();
