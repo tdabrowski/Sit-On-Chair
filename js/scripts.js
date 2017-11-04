@@ -67,7 +67,7 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 	//Start slide show
 	slideList[0].classList.add(show);
 	var slideShow = setInterval(nextSlide,5000);
-	
+
 	nextButton.addEventListener('click',function(){
 		clearInterval(slideShow); //turn off automatic slide show
 		nextSlide();
@@ -101,7 +101,6 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 * @param {string} imgBoxes - boxes with images and header on it to hide
 */
 function hiddenHeader(moveover,moveout,imgBoxes){
-	//var elements = document.querySelectorAll('.sect2__img__head');
 	var boxes = document.querySelectorAll(imgBoxes);
 	for(var i=0;i<boxes.length;i++){
 		boxes[i].addEventListener(moveover,function(){
@@ -109,7 +108,6 @@ function hiddenHeader(moveover,moveout,imgBoxes){
 		});
 		boxes[i].addEventListener(moveout,function(){
 				this.lastElementChild.style.display = 'block';
-
 		});
 	}
 }
