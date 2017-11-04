@@ -50,8 +50,9 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 	var slideList = document.querySelectorAll(slideElements);
 	var index=0;
 
-	slideList[0].classList.add(show);
-	nextButton.addEventListener('click',function(){
+
+	//Automatic slide show anonymous function
+	var nextSlide = function(){
 		slideList[index].classList.remove(show);
 		slideList[index].classList.add(hide);
 		if(index===slideList.length-1){
@@ -62,9 +63,20 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 		}
 		slideList[index].classList.remove(hide);
 		slideList[index].classList.add(show);
+	}
+	//Start slide show
+	var slideShow = setInterval(nextSlide,5000);
+
+
+	slideList[0].classList.add(show);
+	nextButton.addEventListener('click',function(){
+		clearInterval(slideShow); //turn off automatic slide show
+		nextSlide();
+		slideShow = setInterval(nextSlide,5000); //turn on automatic slide show
 	});
 
 	previousButton.addEventListener('click',function(){
+		clearInterval(slideShow); //turn off automatic slide show
 		slideList[index].classList.remove(show);
 		slideList[index].classList.add(hide);
 		if(index>0){
@@ -75,6 +87,7 @@ function manageSlider(nextId,previousId,slideElements,show,hide){
 		}
 		slideList[index].classList.remove(hide);
 		slideList[index].classList.add(show);
+		slideShow = setInterval(nextSlide,5000); //turn on automatic slide show
 	});
 }
 
