@@ -57,6 +57,45 @@
 }
 
 
+//-------------------
+//CHECKBOX GLOBAL SETTINGS - standard settings for all checkbox
+//Span container settings for input checkbox
+%SpanSquare {
+    display:inline-block;
+    float:left;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 0.625rem;
+    border:0.0625rem solid map-get($Section4Colors,checkboxBorder);
+    cursor:pointer;
+}
+
+//Input checkbox settings
+%Checkbox {
+    position: relative;
+    @extend %checkbox;
+    &:checked:after, &:not(:checked):before{
+        content:'';
+        position: absolute;
+        @extend %checkbox;
+        top:0;
+        left:0;
+    }
+    &:checked:after {
+        background-image: url(../images/form_ok.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+//Label checkbox settings
+%Label{
+    color:map-get($Section4Colors,checkboxLabelText);
+    text-align: left;
+}
+
+
 //--------------------------------------------------------
 //HEADER SECTION
 //Navigation
@@ -150,6 +189,17 @@
     background-color: map-get($Section4Colors,checkboxBackg);
     width:3rem;
     height: 3rem;
+}
+
+
+//SECTION CALCULATOR PLACEHOLDERS
+//summary panels
+%summaryPanels {
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom:0.625rem;
+    border-bottom:0.0625rem solid map-get($SectionCalcColors,borderBottomPanel);
+    height: 9.6875rem;
 }
 
 

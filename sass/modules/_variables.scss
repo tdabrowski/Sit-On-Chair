@@ -69,7 +69,11 @@ $Section3FontSetup:(
 
 //SECTION CALCULATOR FONTS
 $sectionCalcFontSize:(
-    header:1rem
+    header:1rem,
+    button: 1.5rem,
+    totalCost: 1.375rem,
+    summaryPanelText:1.375rem,
+    summaryPanelTitle:1.4375rem
 );
 
 

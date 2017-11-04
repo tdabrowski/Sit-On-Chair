@@ -65,52 +65,31 @@
 
 
 /*CHECKBOX*/
-.checkbox {
-    position: relative;
-    padding: 30px 30px 30px 0;
-    input {
-        display: block;
-        opacity: 0;
-        height: 48px;
-        position: absolute;
-        width: 48px;
-        cursor: pointer;
+.sect__calc__checkbox__container{
+    margin-top: 1.75rem;    //new
+    &:after, &:before{
+        clear:both;
+        display:block;
     }
-    label {
-        display: block;
-        padding-left: 65px;
-        position: relative;
-        font-size: 28px;
-        color: #cecece;
-        line-height: 120%;
-        padding-top: 10px;
-        cursor: pointer;
+    .sect__calc__acceptImg{
+        @extend %SpanSquare;
+        .sect__calc__checkbox{
+            @extend %Checkbox;
+        }
     }
-    label::before, label::after {
-        border: 1px solid #27c7ab;
-        content: "";
-        display: block;
-        left: 0;
-        height: 48px;
-        position: absolute;
-        width: 48px;
-        top: 0;
-    }
-    label::after {
-        background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
-        border: 0;
-        display: none;
-    }
-    input:checked + label::after {
-        display: block;
+    .sect__calc__checkbox__label{
+        padding: 0.5rem; //new
+        font-size: 1.75rem;   //new
+        display:inline-block; //new
+        @extend %Label;
     }
 }
 
 
 /*IMAGE*/
-.image_part img{
-    margin-top: 110px;
-    margin-left: 38px;
+.sect__calc__image img{
+    margin-top: 6.875rem;
+    margin-left: 2.375rem;
     display: none;
     @include GridTablet{
         display:inline-block;
@@ -118,110 +97,80 @@
     }
 }
 
-//header on the top summary panel
-.application_align_right{
+
+/*HEADER RIGHT on the top of summary panel*/
+.sect__calc__headerRight{
     text-align: right;
 }
 
 
 /*SUMMARY PANEL*/
-.summary_panel {
-    background-color: white;
+.sect__calc__summaryPanel {
+    background-color: map-get($SectionCalcColors,summaryPanelBack);
     width:100%;
-    height:180px;
-    padding:10px;
-    margin-top: 30px;
-    .panel_left {
-        display: inline-block;
-        width:70%;
-        min-width: 185px;
-        vertical-align: top;
-        padding-bottom:10px;
-        border-bottom:1px solid #e7e7e7;
-        height: 155px;
+    height:11.25rem;
+    padding:0.625rem;
+    margin-top: 1.875rem;
+    .sect__calc__panelLeft, .sect__calc__panelRight{
         .title {
-            height: 30px;
-            margin:5px 0 10px 0;
-            color: #24baa0;
-            font-size: 23px;
+            height: 1.875rem;
+            margin:0.3125rem 0 0.625rem 0;
+            color: map-get($SectionCalcColors,summaryPanelTitle);
+            font-size: map-get($sectionCalcFontSize,summaryPanelTitle);
         }
         span{
-            margin-top:10px;
-            font-size: 22px;
-            color: #5b5a5a;
+            margin-top:0.625rem;
+            font-size: map-get($sectionCalcFontSize,summaryPanelText);
+            color: map-get($SectionCalcColors,summaryPanelLeftText);
             display: block;
         }
     }
-    .panel_right {
-        display: inline-block;
-        //width: 100px;
+    .sect__calc__panelLeft {
+        @extend %summaryPanels;
+        width:70%;
+        min-width: 11.5625rem;
+    }
+    .sect__calc__panelRight {
+        @extend %summaryPanels;
         width:20%;
-        border-left:1px solid #e7e7e7;
+        border-left:0.0625rem solid map-get($SectionCalcColors,borderBottomPanel);
         text-align: right;
-        vertical-align: top;
-        padding-bottom:10px;
-        border-bottom:1px solid #e7e7e7;
-        height: 155px;
-        .title {
-            height: 30px;
-            margin:5px 0 10px 0;
-            color: #24baa0;
-            font-size: 23px;
-        }
         span {
-            display: block;
-            font-size: 22px;
-            color: #24baa0;
-            margin-top:10px;
+            color: map-get($SectionCalcColors,summaryPanelRigthText);
         }
     }
 }
 
 
 /*TOTAL COST PANEL*/
-.sum_panel{
+.sect__calc__sumPanel{
     display:inline-block;
     width:100%;
-    height:40px;
-    background-color: white;
-    .sum_label{
-        display: inline-block;
+    height:2.5rem;
+    background-color: map-get($SectionCalcColors,backTotalCost);
+    .sect__calc__sumLabel, .sect__calc__sum {
+        display:inline-block;
+        font-size: map-get($sectionCalcFontSize,totalCost);
+    }
+    .sect__calc__sumLabel{
         width: 50%;
         text-align:left;
-        font-size: 22px;
-        color: #5b5a5a;
+        color: map-get($SectionCalcColors,totalCostText);
     }
-    .sum {
-        display: inline-block;
+    .sect__calc__sum {
         width: 40%;
         text-align: right;
-        font-size: 22px;
-        color: #24baa0;
+        color: map-get($SectionCalcColors,totalCost);
     }
 }
 
 
 /*BUTTON SETTINGS*/
-.green_button {
-    background-color: #27c7ab;
-    color: white;
-    text-align:center;
-    text-transform: uppercase;
-    width: 200px;
-    padding: 10px 30px;
-    font-size: 24px;
-    display: inline-block;
-    margin-top: 15px;
-    margin-bottom:10px;
-    margin-left: 29px;
-    border-radius: 8px;
+.sect__calc__button {
+    @extend %Button;
+    width: 12.5rem;
+    padding: 0.625rem 1.875rem;
+    font-size: map-get($sectionCalcFontSize,button);
+    margin:0.9375rem 0 0.625rem 1.8125rem;
     text-decoration: none;
-    &:hover {
-        background-color: rgba(36,186,159,0.5);
-        color:$firstColor;
-        transition: 0.5s background-color;
-    }
-    &:active {
-        box-shadow: 4px 4px 3px #888888;
-    }
 }
