@@ -85,21 +85,34 @@ function calculator(){
     }
 
 
+    /**
+    * Display drop down menu - on/off
+    * @param {table} listId
+    */
+    function display(listId){
+        if(listId.style.display === 'block'){
+            listId.style.display = 'none';
+        }
+        else{
+            listId.style.display = 'block';
+        }
+    }
+
     //Event click - arrow button for list chairType (drop down menu show on)
     chairTypeButton.addEventListener('click',function(){
-        chairType.style.display = 'block';
+        display(chairType);
     });
 
 
     //Event click - arrow button for list chairColor (drop down menu show on)
     chairColorButton.addEventListener('click',function(){
-        chairColor.style.display = 'block';
+        display(chairColor);
     });
 
 
     //Event click - arrow button for list chairFactory (drop down menu show on)
     chairFactoryButton.addEventListener('click',function(){
-        chairFactory.style.display = 'block';
+        display(chairFactory);
     });
 
 
@@ -146,7 +159,7 @@ function calculator(){
             chairFactory.style.display = 'none';
         });
     }
-    
+
     checkboxTransport.addEventListener('click',function(){  //Checking if tranport is ordered
         var transportSummaryPrice = document.getElementById('transportSummaryPrice');
         var transportSummaryName = document.getElementById('transportSummaryName');

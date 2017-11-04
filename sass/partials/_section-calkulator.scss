@@ -1,63 +1,63 @@
 /*Header settings*/
-.green_bell {
-  background-color: #24baa0;
-  width: 200px;
-  height: 6px;
+.sect__calc__green_bell {
+  background-color: map-get($SectionCalcColors,headerBellColor);
+  width: 12.5rem;
+  height: 0.375rem;
   display: inline-block;
-  margin: 5px 0 5px 0;
+  margin: 0.3125rem 0 0.3125rem 0;
 }
-.sect__calc__h3 {
-  color: #575757;
-  font-size: 18px;
-  margin-top:30px;
+.sect__calc__smallHeader {
+  color: map-get($SectionCalcColors,smallHeaderText);
+  font-size: map-get($sectionCalcFontSize,smallHeader);
+  margin-top:1.875rem;
 }
 
 
 /*FORM SETTINGS*/
-.form {
-    margin-top:50px;
-    .drop_down_list {
-            border:1px solid #8de0d2;
-            max-width: 360px;
-            height: 50px;
-            background-color: white;
-            margin-top:22px;
-            padding: 8px 12px;
+.sect__calc__form {
+    margin-top:3.125rem;
+    .sect__calc__dropDownList {
+            border:0.0625rem solid map-get($SectionCalcColors,dropDownBorder);
+            max-width: 22.5rem;
+            height: 3.125rem;
+            background-color: map-get($SectionCalcColors,dropdownBack);
+            margin-top:1.375rem;
+            padding: 0.5rem 0.75rem;
             position: relative;
-        .list_label {
-            font-size: 30px;
-            color: #e2e2e2;
+        .sect__calc__listLabel {
+            font-size: map-get($sectionCalcFontSize,listLabel);
+            color: map-get($SectionCalcColors,listLabel);
             font-family: 'ralewaylight', Arial, Tahoma, sans-serif;
         }
-        .list_arrow {
+        .sect__calc__listArrow {
             width: 0;
             height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-top: 15px solid #24baa0;
+            border-left: 0.9375rem solid transparent;
+            border-right: 0.9375rem solid transparent;
+            border-top: 0.9375rem solid map-get($SectionCalcColors,arrowColor);
             display:block;
             position: absolute;
-            right: 14px;
-            top: 20px;
+            right: 0.875rem;
+            top: 1.25rem;
             cursor: pointer;
         }
-        .list_panel {
-            background-color: white;
-            border: 1px solid #ccc;
-            width: 288px;
-            padding-left: 15px;
-            padding-bottom: 10px;
-            list-style: none;
+        .sect__calc__listPanel {
+            background-color: map-get($SectionCalcColors,listPanelBack);
+            border: 0.0625rem solid map-get($SectionCalcColors,listPanelBorder);
+            width: 18rem;
+            padding-left: 0.9375rem;
+            padding-bottom: 0.625rem;
             margin: 0;
-            left: 0px;
+            left: 0;
+            top: 3rem;
             z-index: 2;
+            list-style: none;
             position: absolute;
-            top: 48px;
             display:none;
             >li{
-                margin-top:10px;
+                margin-top:0.625rem;
                 cursor: pointer;
-                color: #585858;
+                color: map-get($SectionCalcColors,listItemTextColor);
             }
         }
     }
@@ -79,7 +79,7 @@
     }
     .sect__calc__checkbox__label{
         padding: 0.5rem; //new
-        font-size: 1.75rem;   //new
+        font-size: map-get($sectionCalcFontSize,checkboxFont);   //new
         display:inline-block; //new
         @extend %Label;
     }

@@ -53,35 +53,14 @@
         display:block;
     }
     .sect4__acceptImg{
-        display:inline-block;
-        float:left;
-        width: 3.125rem;
-        height: 3.125rem;
-        margin-right: 0.625rem;
-        border:0.0625rem solid map-get($Section4Colors,checkboxBorder);
-        cursor:pointer;
+        @extend %SpanSquare;
         .sect4__checkbox{
-            position: relative;
-            @extend %checkbox;
-            &:checked:after, &:not(:checked):before{
-                content:'';
-                position: absolute;
-                @extend %checkbox;
-                top:0;
-                left:0;
-            }
-            &:checked:after {
-                background-image: url(../images/form_ok.jpg);
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
+            @extend %Checkbox;
         }
     }
     .sect4__checkbox__label{
-        font-size: 1.25rem;
-        color:map-get($Section4Colors,checkboxLabelText);
-        text-align: left;
+        font-size: map-get($Section4FontsSetup,checkboxFont);
+        @extend %Label;
     }
 }
 
@@ -90,7 +69,7 @@
 .sect4__submit {
     @extend %Button;
     font-family: 'Raleway', sans-serif;
-    font-size: 1.25rem;
+    font-size: map-get($Section4FontsSetup,buttonFont);
     font-weight: bold;
     padding: 0.9375rem 2.5rem;
     border-radius: 0.625rem;
@@ -98,11 +77,11 @@
     @include GridTablet{
         padding: 0.9375rem 5rem;
         margin:1.375rem 0 0.625rem 0;
-        font-size: 1.875rem;
+        font-size: map-get($Section4FontsSetup,buttonFontTablet);
     }
     @include GridDesktop{
         padding: 0.9375rem 6.875rem;
         margin:2.1875rem 0 0.625rem 0;
-        font-size: 1.875rem;
+        font-size: map-get($Section4FontsSetup,buttonFontDesktop);
     }
 }

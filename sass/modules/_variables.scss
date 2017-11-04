@@ -56,14 +56,18 @@ $Section3FontSetup:(
     boxContentFont:1.5rem,
     boxButtonFont:1rem,
     circleInFont: 2.75rem,
-    circleInSupFont:0.9375rem
+    circleInSupFont:0.9375rem,
 );
 
 
  //FONTS - SECTION 4 FORM
  $Section4FontsSetup:(
     formInputFont: 2rem,
-    formLineHigh:2.5rem
+    formLineHigh:2.5rem,
+    checkboxFont:1.25rem,
+    buttonFont:1.25rem,
+    buttonFontTablet:1.875rem,
+    buttonFontDesktop:1.875rem
  );
 
 
@@ -73,7 +77,10 @@ $sectionCalcFontSize:(
     button: 1.5rem,
     totalCost: 1.375rem,
     summaryPanelText:1.375rem,
-    summaryPanelTitle:1.4375rem
+    summaryPanelTitle:1.4375rem,
+    checkboxFont:1.75rem,
+    listLabel:1.875rem,
+    smallHeader:1.125rem
 );
 
 

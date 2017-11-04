@@ -33,6 +33,14 @@ $buttonsColors:(
 );
 
 
+//CHECKBOX GLOBAL COLORS
+$checkboxColors:(
+    checkboxBorder:#24ba9f,
+    checkboxBackg:white,
+    checkboxLabelText:#c2c2c2
+);
+
+
 //HEADER SPECIFIC SECTION COLORS
 $HeaderSectionColors:(
     textMain:white,    //main text color
@@ -85,9 +93,6 @@ $Section4Colors:(
     inputText: black,
     inputBorder:#24ba9f,
     placeholderColor: #c2c2c2,
-    checkboxBorder:#24ba9f,
-    checkboxBackg:white,
-    checkboxLabelText:#c2c2c2
 );
 
 
@@ -100,7 +105,16 @@ $SectionCalcColors:(
     summaryPanelRigthText:#24baa0,
     summaryPanelLeftText:#5b5a5a,
     summaryPanelTitle:#24baa0,
-    summaryPanelBack:white
+    summaryPanelBack:white,
+    dropDownBorder:#24ba9f,
+    dropdownBack:white,
+    listLabel:#e2e2e2,
+    arrowColor:#24baa0,
+    listPanelBack:white,
+    listPanelBorder:#ccc,
+    listItemTextColor:#585858,
+    smallHeaderText:#575757,
+    headerBellColor:#24ba9f
 );
 
 
