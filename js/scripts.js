@@ -104,10 +104,15 @@ function hiddenHeader(moveover,moveout,imgBoxes){
 	var boxes = document.querySelectorAll(imgBoxes);
 	for(var i=0;i<boxes.length;i++){
 		boxes[i].addEventListener(moveover,function(){
-				this.lastElementChild.style.display = 'none';
+			this.lastElementChild.style.display = 'none';
+			this.style.overflow = 'hidden';
+			this.firstElementChild.style.transform = 'scale(1.05,1.05)';
+			this.firstElementChild.style.transition = '1s';
 		});
 		boxes[i].addEventListener(moveout,function(){
-				this.lastElementChild.style.display = 'block';
+			this.lastElementChild.style.display = 'block';
+			this.firstElementChild.style.transform = 'scale(1,1)';
+			this.firstElementChild.style.transition = '1s';
 		});
 	}
 }
