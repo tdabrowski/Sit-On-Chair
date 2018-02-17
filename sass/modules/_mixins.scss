@@ -71,6 +71,7 @@
     animation: $keyName $duration $repeatCount $type;
     -moz-animation: $keyName $duration $repeatCount $type;
     -webkit-animation: $keyName $duration $repeatCount $type;
+    -o-animation: $keyName $duration $repeatCount $type;
 }
 
 

@@ -48,19 +48,39 @@
 /*CHECKBOX*/
 .sect4__checkbox__container{
     margin-top: 2.5rem;
+    position: relative;
     &:after, &:before{
         clear:both;
         display:block;
     }
-    .sect4__acceptImg{
-        @extend %SpanSquare;
-        .sect4__checkbox{
-            @extend %Checkbox;
-        }
+
+    .sect4__checkbox{
+        width: 3.125rem;
+        height: 3.125rem;
+        opacity: 0.01;
     }
+
+    .sect4__checkbox:checked + .sect4__checkbox__label::after{
+        left:-60px;
+        @extend %checked;
+    }
+
+
+    .sect4__checkbox:not(:checked) + .sect4__checkbox__label::before{
+        left:-60px;
+        @extend %notChecked;
+    }
+
     .sect4__checkbox__label{
-        font-size: map-get($Section4FontsSetup,checkboxFont);
+        font-size: 16px;
         @extend %Label;
+        position: absolute;
+        top:0;
+        left: 60px;
+        display: inline-block;
+        @media all and (min-width:370px){
+            font-size: map-get($Section4FontsSetup,checkboxFont);
+        }
     }
 }
 

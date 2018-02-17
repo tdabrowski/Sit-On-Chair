@@ -1,7 +1,6 @@
 # Sit On Chair
 Sit On Chair - site built on the Coders Lab workshops.
 Built on the basis of RWD practices, with technologies used like HTML, JavaScript and Saas.
-Optimized to best work with Google Chrome Web browser.
 
 ## Demo
 You can visit and view my work here https://tdabrowski.github.io/SitOnChair/

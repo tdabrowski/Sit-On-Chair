@@ -67,15 +67,26 @@
 /*CHECKBOX*/
 .sect__calc__checkbox__container{
     margin-top: 1.75rem;    //new
+    position: relative;
     &:after, &:before{
         clear:both;
         display:block;
     }
-    .sect__calc__acceptImg{
-        @extend %SpanSquare;
-        .sect__calc__checkbox{
-            @extend %Checkbox;
-        }
+
+    .sect__calc__checkbox{
+        width: 3.125rem;
+        height: 3.125rem;
+        opacity: 0.1;
+    }
+
+    .sect__calc__checkbox:checked + .sect__calc__checkbox__label::after{
+        left:0;
+        @extend %checked;
+    }
+
+    .sect__calc__checkbox:not(:checked) + .sect__calc__checkbox__label::before{
+        left:0;
+        @extend %notChecked;
     }
     .sect__calc__checkbox__label{
         padding: 0.5rem; //new

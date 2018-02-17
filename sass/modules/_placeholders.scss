@@ -40,7 +40,7 @@
 //BUTTONS GLOBAL SETTINGS - standard settings and hover,active action
 %Button {
     display:inline-block;
-    border: none;
+    border: 0;
     outline: none;
     text-align: center;
     border-radius: 0.625rem;
@@ -54,13 +54,36 @@
     &:active {
         box-shadow: 0.25rem 0.25rem 0.1875rem map-get($buttonsColors,buttonShadowColor);
     }
+    &:focus {
+        outline:0 !important;
+        border:0;
+    }
+    &:-moz-focus-inner {
+        border:0;
+        outline:0 !important;
+    }
 }
 
 
 //-------------------
 //CHECKBOX GLOBAL SETTINGS - standard settings for all checkbox
-//Span container settings for input checkbox
-%SpanSquare {
+//Input checkbox checked
+%checked {
+    @extend %checkboxSize;
+    background-image: url(../images/form_ok.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+//Input checkbox unchecked
+%notChecked {
+    @extend %checkboxSize;
+    background-color: map-get($checkboxColors,checkboxBackg);
+}
+
+//Checkbox size and background
+%checkboxSize{
     display:inline-block;
     float:left;
     width: 3.125rem;
@@ -68,32 +91,10 @@
     margin-right: 0.625rem;
     border:0.0625rem solid map-get($checkboxColors,checkboxBorder);
     cursor:pointer;
-}
-
-//Input checkbox settings
-%Checkbox {
-    position: relative;
-    @extend %checkboxSize;
-    &:checked:after, &:not(:checked):before{
-        content:'';
-        position: absolute;
-        @extend %checkboxSize;
-        top:0;
-        left:0;
-    }
-    &:checked:after {
-        background-image: url(../images/form_ok.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-}
-
-//Checkbox size and background
-%checkboxSize{
-    background-color: map-get($checkboxColors,checkboxBackg);
-    width:3rem;
-    height: 3rem;
+    position: absolute;
+    content: '';
+    padding: 0.3125rem 0.3125rem;
+    top:0;
 }
 
 //Label checkbox settings
