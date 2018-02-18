@@ -28,6 +28,14 @@
     &:hover{
         color: map-get($Section1Colors,hoverArrow);
     }
+    &:focus {
+        outline:none;
+        border:0;
+    }
+    &:-moz-focus-inner {
+        border:0;
+        outline:none;
+    }
 }
 .sect1__btn2 {  //right button
     text-align: right;
